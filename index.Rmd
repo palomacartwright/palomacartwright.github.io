@@ -1,6 +1,6 @@
 ---
 title: "Paloma Cartwright"
-image: "sailing.jpeg"
+image: "face.jpeg"
 links:
   - label: LinkedIn
     url: "https://www.linkedin.com/in/paloma-cartwright-257b85171/"
