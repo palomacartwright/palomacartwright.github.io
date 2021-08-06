@@ -1,0 +1,10 @@
+---
+title: "CV Page"
+description: |
+  This page contains a downloadable copy of my CV
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
