@@ -1,18 +1,16 @@
 ---
 title: "Paloma Cartwright"
-description: |
-  Welcome to my personal website. I hope you enjoy it!
+image: "sailing.jpeg"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/paloma-cartwright-257b85171/"
+  - label: GitHub
+    url: "https://github.com/palomacartwright"
+  - label: Email
+    url: "mailto:palomacartwright@bren.ucsb.edu"
+output:
+  postcards::jolla
 site: distill::distill_website
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
-
-# Learn more about publishing to GitHub Pages at:
-# https://rstudio.github.io/distill/publish_website.html#github-pages
-
-```
-
+ 
+I am a student living in Santa Barbara, currently doing a MEDS degree at the Bren School for Environmental Science and Management. I love talking about The Bahamas, sailing, and food.
