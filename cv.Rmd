@@ -1,10 +1,20 @@
 ---
 title: "My exta cool CV"
 description: |
-  This page contains a downloadable copy of my CV
+  This page contains a copy of my CV because I'm bad at updating it i guess 
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+```
+
+#### Adding in some stuff 
+Added in a ggplot as a place holder using the diamonds dataset because I just want to practicing editing and stuff
+
+
+```{r}
+ggplot(data = diamonds, aes(x = carat, y = price)) +
+  geom_point(aes(color = cut))
 ```
 
