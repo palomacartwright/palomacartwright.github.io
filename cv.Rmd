@@ -1,5 +1,5 @@
 ---
-title: "My exta cool CV"
+title: "My extra cool CV"
 description: |
   This page contains a copy of my CV because I'm bad at updating it i guess 
 ---

@@ -1,0 +1,33 @@
+---
+title: "Using `ggplot` to Explore Palmer Penguins Datasets"
+description: |
+  This blog post has graphs from the palmer penguins dataset.
+author:
+  - name: Paloma Cartwright
+    url: {}
+date: 08-10-2021
+output:
+  distill::distill_article:
+    self_contained: false
+preview: images/lter_penguins.png
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(palmerpenguins)
+```
+
+## Exploring Palmer Penguins 
+
+This is a graph using ggplot to display the flipper length and body mass relation of the palmer penguins dataset. 
+
+```{r}
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point(aes(color = flipper_length_mm)) +
+  labs(title = "Flipper Length vs Body Mass of Palmer Penguins", 
+       x = "Flipper Length (mm)", 
+       y = "Body Mass (g)")
+```
+
