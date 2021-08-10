@@ -1,0 +1,62 @@
+---
+title: "Exploring the Diamonds Dataset"
+description: |
+  Using the diamonds dataset to explore ggplot functions and customization more.
+author:
+  - name: Paloma Cartwright
+    url: {}
+date: 08-10-2021
+output:
+  distill::distill_article:
+    self_contained: false
+preview: images/diamonds.png
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(skimr)
+library(GGally)
+```
+## Using GGally and ggplot to Explore the Diamonds data set 
+
+
+### Using ggplot 
+
+#### Creating a Scatter Plot 
+
+Creating a scatter plot of carat versus price of the diamonds data set. 
+
+```{r}
+
+ggplot(data = diamonds, aes(x = carat, y = price)) +
+  geom_point() +
+  aes(color = color) +
+  facet_wrap(~cut)
+  
+```
+Generally, as the carats increase, the price of the diamonds also increase. 
+
+#### Creating a Histogram 
+
+Creating a histogram of the carats of diamonds in the dataset 
+
+```{r}
+ggplot(data = diamonds, aes(x = carat, fill = color)) +
+  geom_histogram() +
+  aes(color = carat)
+```
+
+
+### Using GGally 
+
+This outputs a really ridiculous set of graphs, but that is the purpose of the ggpairs function. 
+
+```{r}
+
+GGally::ggpairs(diamonds)
+```
+
+
+
