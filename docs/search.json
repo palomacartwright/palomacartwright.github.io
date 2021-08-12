@@ -6,14 +6,14 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-08-10T11:02:30-07:00"
+      "last_modified": "2021-08-12T15:13:33-07:00"
     },
     {
       "path": "blog.html",
       "title": "Paloma's Blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-08-10T11:02:30-07:00"
+      "last_modified": "2021-08-12T15:13:33-07:00"
     },
     {
       "path": "cv.html",
@@ -21,14 +21,14 @@
       "description": "This page contains a copy of my CV because I'm bad at updating it i guess ",
       "author": [],
       "contents": "\nAdding in some stuff\nAdded in a ggplot as a place holder using the diamonds dataset because I just want to practicing editing and stuff\n\n\n\n\n\n\n",
-      "last_modified": "2021-08-10T11:02:32-07:00"
+      "last_modified": "2021-08-12T15:13:36-07:00"
     },
     {
       "path": "index.html",
       "title": "Paloma Cartwright",
       "author": [],
       "contents": "\n\n          \n          \n          My Website\n          \n          \n          Home\n          About\n          CV Page\n          Blog\n          ☰\n          \n          \n      \n        \n          \n            Paloma Cartwright\n          \n          \n            \n              Paloma Cartwright completed her Bachelor of Science in Computer Science and Environment at McGill University in June 2021. Growing up in The Bahamas, spending most of her days in or on the ocean, her passion for nature developed from an early age. She experienced first hand the impacts of climate change on her home country. Because of this, she understood how both computer science and environmental disciplines would be crucial to finding solutions for climate change impacts in The Bahamas. Throughout her undergraduate career, she completed internships with the Bahamas Sea Turtle Research Institute and the Bimini Biological Field Station Sharklab studying varying species of marine life. After graduation, Paloma seeked to bridge the gap between her two chosen disciplines and was drawn to the Environmental Data Science program at the Bren School of Environmental Science and Management because of the focus on using data science to solve environmental problems. Currently, her interests range from energy and climate to coastal and marine resources. Her long-term goal is to have an impact on climate change mitigation in The Bahamas.\n            \n            \n              Paloma Cartwright completed her Bachelor of Science in Computer Science and Environment at McGill University in June 2021. Growing up in The Bahamas, spending most of her days in or on the ocean, her passion for nature developed from an early age. She experienced first hand the impacts of climate change on her home country. Because of this, she understood how both computer science and environmental disciplines would be crucial to finding solutions for climate change impacts in The Bahamas. Throughout her undergraduate career, she completed internships with the Bahamas Sea Turtle Research Institute and the Bimini Biological Field Station Sharklab studying varying species of marine life. After graduation, Paloma seeked to bridge the gap between her two chosen disciplines and was drawn to the Environmental Data Science program at the Bren School of Environmental Science and Management because of the focus on using data science to solve environmental problems. Currently, her interests range from energy and climate to coastal and marine resources. Her long-term goal is to have an impact on climate change mitigation in The Bahamas.\n            \n          \n\n          \n            \n              \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                      Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    GitHub\n                  \n                \n                                \n                  \n                    Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2021-08-10T11:02:32-07:00"
+      "last_modified": "2021-08-12T15:13:36-07:00"
     }
   ],
   "collections": ["posts/posts.json"]
