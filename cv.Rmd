@@ -1,7 +1,7 @@
 ---
-title: "My extra cool CV"
+title: "My CV"
 description: |
-  This page contains a copy of my CV because I'm bad at updating it i guess 
+  This page contains a copy of my CV.  
 ---
 
 ```{r setup, include=FALSE}
@@ -9,12 +9,95 @@ knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 ```
 
-#### Adding in some stuff 
-Added in a ggplot as a place holder using the diamonds dataset because I just want to practicing editing and stuff
+## Paloma Cartwright
 
+#### Personal Profile:
 
-```{r}
-ggplot(data = diamonds, aes(x = carat, y = price)) +
-  geom_point(aes(color = cut))
-```
+-   Master of Environmental Data Science Candidate at the Bren School for Environment Science and Management, University of California, Santa Barbara.
+-   Completed BA in Computer Science and Environment at McGill University in June 2021n Environment.
+-   Member of Bahamas National Sailing Team
+-   Campaigning for 2024 Olympic Games with Bahamas Nacra 17 Racing Team
+
+#### Academic Background:
+
+-   Master of Environmental Data Science Candidate
+
+    -   Bren School of Environmental Science and Management, UC Santa Barbara
+
+        -   Expected June 2022
+
+-   Bachelor of Arts in Computer Science and Environment
+
+    -   McGill University
+
+        -   Completed June 2021
+
+-   Web Development with Java Script Certification
+
+    -   Lighthouse Labs, Montreal QC
+
+        -   March - April 2020
+
+-   "Habla Ya" Spanish Immersion School
+
+    -   Costa Rica
+
+        -   March - April 2015
+
+#### Professional Experience:
+
+-   Certified Instructor -- Bahamas National Sailing School
+
+    -   2014 -- Present
+
+        -   Teaching sailing to children ages 8 -- 16 in various sailboats at all levels of experience. Organized and directed of 1st Annual Mack Knowles Junior Sailing Club Summer Sailing Camp, leading a team of 5 Instructors and over 75 children.
+
+-   Information Technology Coordinator -- Long Island Boat Rentals
+
+    -   2016 -- Present
+
+        -   Coordinator for all technological aspects for the business including web development and social media management
+
+-   Social Coordinator -- McGill Caribbean Student Society Sept.
+
+    -   2020 -- 2021
+
+        -   Executive team member and head organizer for all events hosted by the Caribbean Student Society
+
+-   Intern -- Bimini Biological Field Station Foundation
+
+    -   June and July 2019
+
+        -   Summer Intern at the Bimini Sharklab studying the marine environment around Bimini and the interactions of the animals that reside there, focusing primarily on Sharks and Stingrays.
+
+-   Junior Director of Tourism -- Ministry of Tourism, Bahamas
+
+    -   2016 -- 2017
+
+        -   Deputy Junior Minister of Tourism for the Bahamas and Junior Director of Tourism for Long Island.
+
+#### Skills:
+
+-   Proficient in Java, Python, CSS, HTML and Java Script coding languages - Web Development with Java Script Certified
+-   CPR and First Aid Certified
+-   IANTD (Scuba) Certified
+-   Excellent LEadership and Communication Skills
+-   Strong Research and Analytical Skills
+
+#### Accomplishments: 
+
+- Bimini Sharklab Alf Thompson Memorial Scholarship Recipient	2019
+- Marjorie Davis Award: Top National Exam Results – Bahamas Government Schools	2018 
+- National Top Female Sailor Under 18 Years Old, Bahamas (Optimist, Sunfish, Laser)	2010 - 2018 
+- All Bahamas Merit Scholar (Top Bahamas Ministry of Education Scholarship)	2017 
+- James McGill Entrance Scholarship 	2017 
+- Long Island District Valedictorian 	2017 
+- Qualified for Laser Youth World Championships, Ireland 	2016
+- Bahamas National Sailing Team, Canadian Olympic Regatta Kingston 	2016 
+- 2nd Place – Junior Minister of Tourism Competition Bahamas 	2016 
+- Bahamas Olympic Committee “President’s Cup”, National Youth Awards	2015 
+- “Excellence in Sailing Award”, National Youth Awards	2015 
+- Bahamas National Spelling Bee Champion 	2012 
+- Scripps National Spelling Bee Participant, Washington, DC, USA 	2012 
+
 
