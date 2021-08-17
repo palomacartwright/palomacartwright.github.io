@@ -1,5 +1,10 @@
 ---
 title: "Paloma Cartwright"
+descroption: | 
+site: distill::distill_website
+---
+
+
 image: "face.jpeg"
 links:
   - label: LinkedIn
@@ -8,10 +13,6 @@ links:
     url: "https://github.com/palomacartwright"
   - label: Email
     url: "mailto:palomacartwright@bren.ucsb.edu"
-output:
-  postcards::jolla
-site: distill::distill_website
----
- 
+    
+Paloma Cartwright completed her Bachelor of Science in Computer Science and Environment at McGill University in June 2021. Growing up in The Bahamas, spending most of her days in or on the ocean, her passion for nature developed from an early age. She also experienced first hand the impacts of climate change on her home. Throughout her undergraduate career, she completed internships with the Bahamas Sea Turtle Research Institute and the Bimini Biological Field Station Foundation - Sharklab studying varying species of marine life. After graduation, Paloma seeked to bridge the gap between her two disciplines and enrolled in the Master of Environmental Data Science program at the Bren School of Environmental Science and Management. She understands how both computer science and environmental disciplines will be crucial to finding solutions for climate change impacts in The Bahamas. Currently, her interests lie in renewable energy and climate change mitigation. Her long-term goal is to use data science to advance solutions to the environmental problems faced by The Bahamas. 
 
-Paloma Cartwright completed her Bachelor of Science in Computer Science and Environment at McGill University in June 2021. Growing up in The Bahamas, spending most of her days in or on the ocean, her passion for nature developed from an early age. She experienced first hand the impacts of climate change on her home country. Because of this, she understood how both computer science and environmental disciplines would be crucial to finding solutions for climate change impacts in The Bahamas. Throughout her undergraduate career, she completed internships with the Bahamas Sea Turtle Research Institute and the Bimini Biological Field Station Sharklab studying varying species of marine life. After graduation, Paloma seeked to bridge the gap between her two chosen disciplines and was drawn to the Environmental Data Science program at the Bren School of Environmental Science and Management because of the focus on using data science to solve environmental problems. Currently, her interests range from energy and climate to coastal and marine resources. Her long-term goal is to have an impact on climate change mitigation in The Bahamas. 
