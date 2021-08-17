@@ -13,8 +13,8 @@
     "categories": [],
     "contents": "\nI will edit this post and add in all of the required things throughout the week.\nThroughout EDS 221, we have done extensive work with programming techniques and one of the most fascinating ones for me was the tidyr functions pivot_wider and pivot_longer to tidy data so that it can be used later. It is always fun to see how data can be graphed using the various functions in R like ggplot.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-17T09:06:49-07:00",
-    "input_file": "eds-221-week-2-blog-post.knit.md"
+    "last_modified": "2021-08-17T09:14:50-07:00",
+    "input_file": {}
   },
   {
     "path": "posts/2021-08-10-diamondsdataset/",
