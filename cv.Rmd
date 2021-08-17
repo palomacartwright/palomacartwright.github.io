@@ -1,7 +1,7 @@
 ---
-title: "My CV"
+title: "Paloma Cartwright"
 description: |
-  This page contains a copy of my CV.  
+  Master of Environmental Data Science Candidate.  
 ---
 
 ```{r setup, include=FALSE}
@@ -9,7 +9,6 @@ knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 ```
 
-## Paloma Cartwright
 
 #### Personal Profile:
 
