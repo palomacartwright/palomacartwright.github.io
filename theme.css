@@ -31,7 +31,8 @@ html {
   --heading-font:    Lora;
   --mono-font:       Andada Pro;
   --body-font:       Andada Pro;
-  --navbar-font:     Lora;  /* websites + blogs only */
+  --navbar-font:     Lora; 
+  /* websites + blogs only */
 }
 
 /*-- ARTICLE METADATA --*/
@@ -65,6 +66,7 @@ d-appendix {
   --text-size:        15px;
   --hover-color:      white;
   --bkgd-color:       #099EE9;
+  
 }
 
 .distill-site-footer {
@@ -74,6 +76,12 @@ d-appendix {
   --bkgd-color:       #0F2E3D;
 }
 
+d-article>p>img{
+  width = 30%
+}
+
 /*-- Additional custom styles --*/
+
+
 /* Add any additional CSS rules below                      */
 
