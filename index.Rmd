@@ -2,10 +2,37 @@
 title: "Paloma Cartwright"
 descroption: | 
 site: distill::distill_website
-
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
-![Personal Picture](face.jpeg){}
-Paloma Cartwright completed her Bachelor of Science in Computer Science and Environment at McGill University in June 2021. Growing up in The Bahamas, spending most of her days in or on the ocean, her passion for nature developed from an early age. She also experienced first hand the impacts of climate change on her home. Throughout her undergraduate career, she completed internships with the Bahamas Sea Turtle Research Institute and the Bimini Biological Field Station Foundation - Sharklab studying varying species of marine life. After graduation, Paloma seeked to bridge the gap between her two disciplines and enrolled in the Master of Environmental Data Science program at the Bren School of Environmental Science and Management. She understands how both computer science and environmental disciplines will be crucial to finding solutions for climate change impacts in The Bahamas. Currently, her interests lie in renewable energy and climate change mitigation. Her long-term goal is to use data science to advance solutions to the environmental problems faced by The Bahamas.
+![Personal Picture](face.jpeg){width=25%}
 
- links: - label: LinkedIn url: "https://www.linkedin.com/in/paloma-cartwright-257b85171/" - label: GitHub url: "https://github.com/palomacartwright" - label: Email url: "mailto:palomacartwright@bren.ucsb.edu"
+<p class="bio"> Paloma Cartwright completed her Bachelor of Science in Computer Science and Environment at McGill University in June 2021. Growing up in The Bahamas, spending most of her days in or on
+the ocean, her passion for nature developed from an early age. She also
+experienced first hand the impacts of climate change on her home.
+Throughout her undergraduate career, she completed internships with the
+Bahamas Sea Turtle Research Institute and the Bimini Biological Field
+Station Foundation - Sharklab studying varying species of marine life.
+After graduation, Paloma seeked to bridge the gap between her two
+disciplines and enrolled in the Master of Environmental Data Science
+program at the Bren School of Environmental Science and Management. She
+understands how both computer science and environmental disciplines will
+be crucial to finding solutions for climate change impacts in The
+Bahamas. Currently, her interests lie in renewable energy and climate
+change mitigation. Her long-term goal is to use data science to advance
+solutions to the environmental problems faced by The Bahamas.
+</p>
+
+<ul class = "link_buttons">
+  <a href="https://www.linkedin.com/in/paloma-cartwright-257b85171/">
+    <button class="button"> LinkedIn </button>
+  </a>
+  <a href="https://github.com/palomacartwright">
+    <button class="button">Github </button>
+  </a>
+   <a href="mailto:palomacartwright@bren.ucsb.edu">
+    <button class="button">Email </button>
+  </a>
+</ul>

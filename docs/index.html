@@ -105,7 +105,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","descroption","site"]}},"value":[{"type":"character","attributes":{},"value":["Paloma Cartwright"]},{"type":"NULL"},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","descroption","site","editor_options"]}},"value":[{"type":"character","attributes":{},"value":["Paloma Cartwright"]},{"type":"NULL"},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["markdown"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["wrap"]}},"value":[{"type":"integer","attributes":{},"value":[72]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2185,8 +2185,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --bkgd-color:       #0F2E3D;
   }
 
-  d-article>p>img{
-    width = 30%
+  ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  a{
+    text-decoration: none;
+  }
+
+  .button{
+    background-color: lightblue; 
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+  }
+
+  .button:hover {
+    background-color: lightblue; /* Green */
+    color: black;
   }
 
   /*-- Additional custom styles --*/
@@ -2349,7 +2372,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2402,8 +2425,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <div class="d-article">
-<p><img src="face.jpeg" alt="Personal Picture" /> Paloma Cartwright completed her Bachelor of Science in Computer Science and Environment at McGill University in June 2021. Growing up in The Bahamas, spending most of her days in or on the ocean, her passion for nature developed from an early age. She also experienced first hand the impacts of climate change on her home. Throughout her undergraduate career, she completed internships with the Bahamas Sea Turtle Research Institute and the Bimini Biological Field Station Foundation - Sharklab studying varying species of marine life. After graduation, Paloma seeked to bridge the gap between her two disciplines and enrolled in the Master of Environmental Data Science program at the Bren School of Environmental Science and Management. She understands how both computer science and environmental disciplines will be crucial to finding solutions for climate change impacts in The Bahamas. Currently, her interests lie in renewable energy and climate change mitigation. Her long-term goal is to use data science to advance solutions to the environmental problems faced by The Bahamas.</p>
-<p>links: - label: LinkedIn url: “<a href="https://www.linkedin.com/in/paloma-cartwright-257b85171/" class="uri">https://www.linkedin.com/in/paloma-cartwright-257b85171/</a>” - label: GitHub url: “<a href="https://github.com/palomacartwright" class="uri">https://github.com/palomacartwright</a>” - label: Email url: “<a href="mailto:palomacartwright@bren.ucsb.edu" class="uri">mailto:palomacartwright@bren.ucsb.edu</a>”</p>
+<figure>
+<img src="face.jpeg" style="width:25.0%" alt="Personal Picture" /><figcaption aria-hidden="true">Personal Picture</figcaption>
+</figure>
+<p class="bio">
+Paloma Cartwright completed her Bachelor of Science in Computer Science and Environment at McGill University in June 2021. Growing up in The Bahamas, spending most of her days in or on the ocean, her passion for nature developed from an early age. She also experienced first hand the impacts of climate change on her home. Throughout her undergraduate career, she completed internships with the Bahamas Sea Turtle Research Institute and the Bimini Biological Field Station Foundation - Sharklab studying varying species of marine life. After graduation, Paloma seeked to bridge the gap between her two disciplines and enrolled in the Master of Environmental Data Science program at the Bren School of Environmental Science and Management. She understands how both computer science and environmental disciplines will be crucial to finding solutions for climate change impacts in The Bahamas. Currently, her interests lie in renewable energy and climate change mitigation. Her long-term goal is to use data science to advance solutions to the environmental problems faced by The Bahamas.
+</p>
+<ul class="link_buttons">
+<a href="https://www.linkedin.com/in/paloma-cartwright-257b85171/"> <button class="button"> LinkedIn </button> </a> <a href="https://github.com/palomacartwright"> <button class="button">Github </button> </a> <a href="mailto:palomacartwright@bren.ucsb.edu"> <button class="button">Email </button> </a>
+</ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
