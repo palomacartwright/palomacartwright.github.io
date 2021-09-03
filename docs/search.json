@@ -6,14 +6,14 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-08-31T15:28:02-07:00"
+      "last_modified": "2021-09-03T09:54:10-07:00"
     },
     {
       "path": "blog.html",
       "title": "Paloma's Blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-08-31T15:28:02-07:00"
+      "last_modified": "2021-09-03T09:54:11-07:00"
     },
     {
       "path": "cv.html",
@@ -21,14 +21,14 @@
       "description": "Master of Environmental Data Science Candidate.  ",
       "author": [],
       "contents": "\nPersonal Profile:\nMaster of Environmental Data Science Candidate at the Bren School for Environment Science and Management, University of California, Santa Barbara. Completed BA in Computer Science and Environment at McGill University in June 2021. Member of Bahamas National Sailing Team campaigning for 2024 Olympic Games with Bahamas Nacra 17 Racing Team\nAcademic Background:\nMaster of Environmental Data Science Candidate\nBren School of Environmental Science and Management, UC Santa Barbara\nExpected June 2022\n\n\nBachelor of Arts in Computer Science and Environment\nMcGill University\nCompleted June 2021\n\n\nWeb Development with Java Script Certification\nLighthouse Labs, Montreal QC\nMarch - April 2020\n\n\n“Habla Ya” Spanish Immersion School\nCosta Rica\nMarch - April 2015\n\n\nProfessional Experience:\nCertified Instructor – Bahamas National Sailing School\n2014 – Present\nTeaching sailing to children ages 8 – 16 in various sailboats at all levels of experience. Organized and directed of 1st Annual Mack Knowles Junior Sailing Club Summer Sailing Camp, leading a team of 5 Instructors and over 75 children.\n\n\nInformation Technology Coordinator – Long Island Boat Rentals\n2016 – Present\nCoordinator for all technological aspects for the business including web development and social media management\n\n\nSocial Coordinator – McGill Caribbean Student Society Sept.\n2020 – 2021\nExecutive team member and head organizer for all events hosted by the Caribbean Student Society\n\n\nIntern – Bimini Biological Field Station Foundation\nJune and July 2019\nSummer Intern at the Bimini Sharklab studying the marine environment around Bimini and the interactions of the animals that reside there, focusing primarily on Sharks and Stingrays.\n\n\nJunior Director of Tourism – Ministry of Tourism, Bahamas\n2016 – 2017\nDeputy Junior Minister of Tourism for the Bahamas and Junior Director of Tourism for Long Island.\n\n\nSkills:\nProficient in Java, Python, CSS, HTML and Java Script coding languages - Web Development with Java Script Certified\nCPR and First Aid Certified\nIANTD (Scuba) Certified\nExcellent LEadership and Communication Skills\nStrong Research and Analytical Skills\nAccomplishments:\nBimini Sharklab Alf Thompson Memorial Scholarship Recipient 2019\nMarjorie Davis Award: Top National Exam Results – Bahamas Government Schools 2018\nNational Top Female Sailor Under 18 Years Old, Bahamas (Optimist, Sunfish, Laser) 2010 - 2018\nAll Bahamas Merit Scholar (Top Bahamas Ministry of Education Scholarship) 2017\nJames McGill Entrance Scholarship 2017\nLong Island District Valedictorian 2017\nQualified for Laser Youth World Championships, Ireland 2016\nBahamas National Sailing Team, Canadian Olympic Regatta Kingston 2016\n2nd Place – Junior Minister of Tourism Competition Bahamas 2016\nBahamas Olympic Committee “President’s Cup”, National Youth Awards 2015\n“Excellence in Sailing Award”, National Youth Awards 2015\nBahamas National Spelling Bee Champion 2012\nScripps National Spelling Bee Participant, Washington, DC, USA 2012\n\n\n\n",
-      "last_modified": "2021-08-31T15:28:03-07:00"
+      "last_modified": "2021-09-03T09:54:11-07:00"
     },
     {
       "path": "index.html",
       "title": "Paloma Cartwright",
       "author": [],
-      "contents": "\nPersonal Picture\nPaloma Cartwright completed her Bachelor of Science in Computer Science and Environment at McGill University in June 2021. Growing up in The Bahamas, spending most of her days in or on the ocean, her passion for nature developed from an early age. She also experienced first hand the impacts of climate change on her home. Throughout her undergraduate career, she completed internships with the Bahamas Sea Turtle Research Institute and the Bimini Biological Field Station Foundation - Sharklab studying varying species of marine life. After graduation, Paloma seeked to bridge the gap between her two disciplines and enrolled in the Master of Environmental Data Science program at the Bren School of Environmental Science and Management. She understands how both computer science and environmental disciplines will be crucial to finding solutions for climate change impacts in The Bahamas. Currently, her interests lie in renewable energy and climate change mitigation. Her long-term goal is to use data science to advance solutions to the environmental problems faced by The Bahamas.\n\n  LinkedIn    Github    Email  \n\n\n\n",
-      "last_modified": "2021-08-31T15:28:03-07:00"
+      "contents": "\nPersonal Picture\nPaloma Cartwright grew up on a small island in The Bahamas, where she spent most of her days on the ocean. She developed a passion for nature at an early age while also experiencing firsthand the impacts of climate change on her home, surviving yearly hurricanes and witnessing the constant depletion of marine ecosystems surrounding her island. To gain the skills to solve these issues, she headed to McGill University where she completed a BA in Computer Science and Environment in June 2021. Throughout her undergraduate career, she interned with the Bahamas Sea Turtle Research Institute and the Bimini Biological Field Station Foundation - Sharklab. This work inspired her to dive into data science to develop the skills to do more with environmental data. Paloma decided to bridge the gap between her disciplines and enrolled in the Master of Environmental Data Science program at the Bren School of Environmental Science and Management. Her primary interests lie in climate change adaptation and her long-term goal is to use data science to advance solutions to the environmental problems faced by The Bahamas.\n\n  LinkedIn    Github    Email  \n\n\n\n",
+      "last_modified": "2021-09-03T09:54:12-07:00"
     }
   ],
   "collections": ["posts/posts.json"]

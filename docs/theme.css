@@ -22,11 +22,11 @@ html {
   --aside-size:      12px;
   --fig-cap-size:    13px;
   /*-- Main font colors --*/
-  --title-color:     #09DFE9;
-  --header-color:    #09E95E;
-  --body-color:      rgba(0, 0, 0, 0.8);
+  --title-color:     #1780A1;
+  --header-color:    #455E89;
+  --body-color:      #114B5F;
   --aside-color:     rgba(0, 0, 0, 0.6);
-  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   #D4A0A7;
   /*-- Specify custom fonts ~~~ must be imported above   --*/
   --heading-font:    Lora;
   --mono-font:       Andada Pro;
@@ -62,18 +62,18 @@ d-appendix {
 
 .distill-site-header {
   --title-size:       18px;
-  --text-color:       black;
+  --text-color:       #892B64;
   --text-size:        15px;
-  --hover-color:      white;
-  --bkgd-color:       #099EE9;
+  --hover-color:      gray;
+  --bkgd-color:       #F1DAC4;
   
 }
 
 .distill-site-footer {
-  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-color:       #892B64;
   --text-size:        15px;
-  --hover-color:      white;
-  --bkgd-color:       #0F2E3D;
+  --hover-color:      gray;
+  --bkgd-color:       #F1DAC4;
 }
 
 ul{
@@ -86,7 +86,7 @@ a{
 }
 
 .button{
-  background-color: lightblue; 
+  background-color: #0091AD; 
   border: none;
   border-radius: 8px;
   color: white;
@@ -99,12 +99,8 @@ a{
 }
 
 .button:hover {
-  background-color: lightblue; /* Green */
-  color: black;
+  background-color: #EBD4CB;
+  color: #114B5F;
 }
 
-/*-- Additional custom styles --*/
-
-
-/* Add any additional CSS rules below                      */
 
