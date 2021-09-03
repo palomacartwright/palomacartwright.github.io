@@ -76,11 +76,6 @@ d-appendix {
   --bkgd-color:       #F1DAC4;
 }
 
-ul{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
 a{
   text-decoration: none;
 }
@@ -102,5 +97,25 @@ a{
   background-color: #EBD4CB;
   color: #114B5F;
 }
+
+.resume-button{
+  background-color: #0091AD; 
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 15px 32px;
+  width: 30%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+}
+
+.resume-button:hover {
+  background-color: #EBD4CB;
+  color: #114B5F;
+}
+
 
 

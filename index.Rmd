@@ -19,7 +19,10 @@ editor_options:
   <a href="https://github.com/palomacartwright">
     <button class="button">Github </button>
   </a>
-   <a href="mailto:palomacartwright@bren.ucsb.edu">
+   <a href="palomacartwright@bren.ucsb.edu">
     <button class="button">Email </button>
+  </a>
+  <a href="https://twitter.com/palomacart">
+    <button class="button">Twitter </button>
   </a>
 </ul>

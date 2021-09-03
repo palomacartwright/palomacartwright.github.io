@@ -1,7 +1,9 @@
 ---
 title: "Paloma Cartwright"
 description: |
-  Master of Environmental Data Science Candidate.  
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
 ```{r setup, include=FALSE}
@@ -10,15 +12,24 @@ library(tidyverse)
 ```
 
 
-#### Personal Profile:
+<button class="resume-button">
+  [Download Resume](Paloma_Cartwright_Resume.pdf)
+</button>
 
-Master of Environmental Data Science Candidate at the Bren School for Environment Science and Management, University of California, Santa Barbara. Completed BA in Computer Science and Environment at McGill University in June 2021. Member of Bahamas National Sailing Team campaigning for 2024 Olympic Games with Bahamas Nacra 17 Racing Team
+
+### Paloma Cartwright
+
+6520 El Colegio Rd, Goleta, CA 93117 Phone: (805) 294-5880\
+Email:
+[palomacartwright\@bren.ucsb.edu](mailto:palomacartwright@bren.ucsb.edu){.email}
+
 
 #### Academic Background:
 
--   Master of Environmental Data Science Candidate
+-   Master of Environmental Data Science
 
-    -   Bren School of Environmental Science and Management, UC Santa Barbara
+    -   Bren School of Environmental Science and Management, University
+        of California Santa Barbara
 
         -   Expected June 2022
 
@@ -27,12 +38,11 @@ Master of Environmental Data Science Candidate at the Bren School for Environmen
     -   McGill University
 
         -   Completed June 2021
-
--   Web Development with Java Script Certification
-
-    -   Lighthouse Labs, Montreal QC
-
-        -   March - April 2020
+        -   Ministry of Higher Education, Quebec -- Excellence Bursary
+            for Computer Science 2021
+        -   James McGill Scholarship for Academic Excellence and
+            Outstanding Leadership
+        -   VP Events -- Caribbean Student Society (2020 - 2021)
 
 -   "Habla Ya" Spanish Immersion School
 
@@ -42,58 +52,86 @@ Master of Environmental Data Science Candidate at the Bren School for Environmen
 
 #### Professional Experience:
 
--   Certified Instructor -- Bahamas National Sailing School
-
-    -   2014 -- Present
-
-        -   Teaching sailing to children ages 8 -- 16 in various sailboats at all levels of experience. Organized and directed of 1st Annual Mack Knowles Junior Sailing Club Summer Sailing Camp, leading a team of 5 Instructors and over 75 children.
-
--   Information Technology Coordinator -- Long Island Boat Rentals
+-   Information Technology Coordinator -- Long Island Boat Rentals and
+    Tours
 
     -   2016 -- Present
 
-        -   Coordinator for all technological aspects for the business including web development and social media management
-
--   Social Coordinator -- McGill Caribbean Student Society Sept.
-
-    -   2020 -- 2021
-
-        -   Executive team member and head organizer for all events hosted by the Caribbean Student Society
+        -   Coordinator for all technological aspects for the business
+            including web development and social media management
 
 -   Intern -- Bimini Biological Field Station Foundation
 
     -   June and July 2019
 
-        -   Summer Intern at the Bimini Sharklab studying the marine environment around Bimini and the interactions of the animals that reside there, focusing primarily on Sharks and Stingrays.
+        -   Summer Intern at the Bimini Sharklab studying the marine
+            environment around Bimini and the interactions of the
+            animals that reside there, focusing primarily on Sharks and
+            Stingrays.
+
+-   Summer Intern --- Bahamas Sea Turtle Research Institute
+
+    -   2014 -- 2019
+
+        -   Assisted with turtle tagging and data collection during
+            summers with all turtle species present in The Islands of
+            The Bahamas.
+
+-   Certified Instructor -- Bahamas National Sailing School
+
+    -   2014 -- 2019
+
+        -   Teaching sailing to children ages 8 -- 16 in various
+            sailboats at all levels of experience. Organized and
+            directed of 1st Annual Mack Knowles Junior Sailing Club
+            Summer Sailing Camp, leading a team of 5 Instructors and
+            over 75 children.
 
 -   Junior Director of Tourism -- Ministry of Tourism, Bahamas
 
     -   2016 -- 2017
 
-        -   Deputy Junior Minister of Tourism for the Bahamas and Junior Director of Tourism for Long Island.
+        -   Deputy Junior Minister of Tourism for the Bahamas and Junior
+            Director of Tourism for Long Island.
+
+-   Intern --- Bahamas Marine Mammal Research Organization
+
+    -   2015
+
+        -   Summer internship with the BMMRO studying populations of
+            marine mammals surrounding Abaco, Bahamas, including
+            dolphins, whales, and manatees
 
 #### Skills:
 
--   Proficient in Java, Python, CSS, HTML and Java Script coding languages - Web Development with Java Script Certified
--   CPR and First Aid Certified
+-   Proficient in R, Python, SQL, Java, CSS, HTML and JavaScript Coding
+    Languages
+-   Experience using Github, Google Drive and Microsoft Office
+-   Web Development with JavaScript Certified -- Lighthouse Labs,
+    Montreal
 -   IANTD (Scuba) Certified
--   Excellent LEadership and Communication Skills
--   Strong Research and Analytical Skills
+-   Excellent Leadership and Communication Skills
+-   Strong Research, Editing, Writing and Analytical Skills
 
-#### Accomplishments: 
+#### Accomplishments:
 
-- Bimini Sharklab Alf Thompson Memorial Scholarship Recipient	2019
-- Marjorie Davis Award: Top National Exam Results – Bahamas Government Schools	2018 
-- National Top Female Sailor Under 18 Years Old, Bahamas (Optimist, Sunfish, Laser)	2010 - 2018 
-- All Bahamas Merit Scholar (Top Bahamas Ministry of Education Scholarship)	2017 
-- James McGill Entrance Scholarship 	2017 
-- Long Island District Valedictorian 	2017 
-- Qualified for Laser Youth World Championships, Ireland 	2016
-- Bahamas National Sailing Team, Canadian Olympic Regatta Kingston 	2016 
-- 2nd Place – Junior Minister of Tourism Competition Bahamas 	2016 
-- Bahamas Olympic Committee “President’s Cup”, National Youth Awards	2015 
-- “Excellence in Sailing Award”, National Youth Awards	2015 
-- Bahamas National Spelling Bee Champion 	2012 
-- Scripps National Spelling Bee Participant, Washington, DC, USA 	2012 
-
-
+-   Ministry of Higher Education Quebec - Excellence in Computer Science
+    Bursary 2021
+-   Bimini Sharklab Alf Thompson Memorial Scholarship Recipient 2019
+-   Marjorie Davis Award: Top National Exam Results -- Bahamas
+    Government Schools 2018
+-   National Top Female Sailor Under 18 Years Old, Bahamas (Optimist,
+    Sunfish, Laser) 2010 - 2018
+-   All Bahamas Merit Scholar (Top Bahamas Ministry of Education
+    Scholarship) 2017
+-   James McGill Entrance Scholarship 2017
+-   Long Island District Valedictorian 2017
+-   Qualified for Laser Youth World Championships, Ireland 2016
+-   Bahamas National Sailing Team, Canadian Olympic Regatta Kingston
+    2016
+-   2nd Place -- Junior Minister of Tourism Competition Bahamas 2016
+-   Bahamas Olympic Committee "President's Cup", National Youth Awards
+    2015
+-   "Excellence in Sailing Award", National Youth Awards 2015
+-   Bahamas National Spelling Bee Champion 2012
+-   Scripps National Spelling Bee Participant, Washington, DC, USA 2012
