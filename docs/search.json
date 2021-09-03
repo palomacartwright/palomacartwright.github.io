@@ -1,11 +1,33 @@
 {
   "articles": [
     {
+      "path": "about.html",
+      "title": "About this site",
+      "description": "Some additional details about the website",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-09-03T10:43:12-07:00"
+    },
+    {
+      "path": "blog.html",
+      "title": "Paloma's Blog",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-09-03T10:43:12-07:00"
+    },
+    {
       "path": "cv.html",
       "title": "Paloma Cartwright",
       "author": [],
       "contents": "\n\nDownload Resume\n\nPaloma Cartwright\n6520 El Colegio Rd, Goleta, CA 93117 Phone: (805) 294-5880\nEmail: palomacartwright@bren.ucsb.edu\nAcademic Background:\nMaster of Environmental Data Science\nBren School of Environmental Science and Management, University of California Santa Barbara\nExpected June 2022\n\n\nBachelor of Arts in Computer Science and Environment\nMcGill University\nCompleted June 2021\nMinistry of Higher Education, Quebec – Excellence Bursary for Computer Science 2021\nJames McGill Scholarship for Academic Excellence and Outstanding Leadership\nVP Events – Caribbean Student Society (2020 - 2021)\n\n\n“Habla Ya” Spanish Immersion School\nCosta Rica\nMarch - April 2015\n\n\nProfessional Experience:\nInformation Technology Coordinator – Long Island Boat Rentals and Tours\n2016 – Present\nCoordinator for all technological aspects for the business including web development and social media management\n\n\nIntern – Bimini Biological Field Station Foundation\nJune and July 2019\nSummer Intern at the Bimini Sharklab studying the marine environment around Bimini and the interactions of the animals that reside there, focusing primarily on Sharks and Stingrays.\n\n\nSummer Intern — Bahamas Sea Turtle Research Institute\n2014 – 2019\nAssisted with turtle tagging and data collection during summers with all turtle species present in The Islands of The Bahamas.\n\n\nCertified Instructor – Bahamas National Sailing School\n2014 – 2019\nTeaching sailing to children ages 8 – 16 in various sailboats at all levels of experience. Organized and directed of 1st Annual Mack Knowles Junior Sailing Club Summer Sailing Camp, leading a team of 5 Instructors and over 75 children.\n\n\nJunior Director of Tourism – Ministry of Tourism, Bahamas\n2016 – 2017\nDeputy Junior Minister of Tourism for the Bahamas and Junior Director of Tourism for Long Island.\n\n\nIntern — Bahamas Marine Mammal Research Organization\n2015\nSummer internship with the BMMRO studying populations of marine mammals surrounding Abaco, Bahamas, including dolphins, whales, and manatees\n\n\nSkills:\nProficient in R, Python, SQL, Java, CSS, HTML and JavaScript Coding Languages\nExperience using Github, Google Drive and Microsoft Office\nWeb Development with JavaScript Certified – Lighthouse Labs, Montreal\nIANTD (Scuba) Certified\nExcellent Leadership and Communication Skills\nStrong Research, Editing, Writing and Analytical Skills\nAccomplishments:\nMinistry of Higher Education Quebec - Excellence in Computer Science Bursary 2021\nBimini Sharklab Alf Thompson Memorial Scholarship Recipient 2019\nMarjorie Davis Award: Top National Exam Results – Bahamas Government Schools 2018\nNational Top Female Sailor Under 18 Years Old, Bahamas (Optimist, Sunfish, Laser) 2010 - 2018\nAll Bahamas Merit Scholar (Top Bahamas Ministry of Education Scholarship) 2017\nJames McGill Entrance Scholarship 2017\nLong Island District Valedictorian 2017\nQualified for Laser Youth World Championships, Ireland 2016\nBahamas National Sailing Team, Canadian Olympic Regatta Kingston 2016\n2nd Place – Junior Minister of Tourism Competition Bahamas 2016\nBahamas Olympic Committee “President’s Cup”, National Youth Awards 2015\n“Excellence in Sailing Award”, National Youth Awards 2015\nBahamas National Spelling Bee Champion 2012\nScripps National Spelling Bee Participant, Washington, DC, USA 2012\n\n\n\n",
-      "last_modified": "2021-09-03T10:32:41-07:00"
+      "last_modified": "2021-09-03T10:43:13-07:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Paloma Cartwright",
+      "author": [],
+      "contents": "\nPersonal Picture\nPaloma Cartwright grew up on a small island in The Bahamas, where she spent most of her days on the ocean. She developed a passion for nature at an early age while also experiencing firsthand the impacts of climate change on her home, surviving yearly hurricanes and witnessing the constant depletion of marine ecosystems surrounding her island. To gain the skills to solve these issues, she headed to McGill University where she completed a BA in Computer Science and Environment in June 2021. Throughout her undergraduate career, she interned with the Bahamas Sea Turtle Research Institute and the Bimini Biological Field Station Foundation - Sharklab. This work inspired her to dive into data science to develop the skills to do more with environmental data. Paloma decided to bridge the gap between her disciplines and enrolled in the Master of Environmental Data Science program at the Bren School of Environmental Science and Management. Her primary interests lie in climate change adaptation and her long-term goal is to use data science to advance solutions to the environmental problems faced by The Bahamas.\n\n  LinkedIn    Github    Email    Twitter  \n\n\n\n",
+      "last_modified": "2021-09-03T10:43:13-07:00"
     }
   ],
   "collections": ["posts/posts.json"]

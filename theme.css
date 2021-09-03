@@ -62,18 +62,18 @@ d-appendix {
 
 .distill-site-header {
   --title-size:       18px;
-  --text-color:       #892B64;
+  --text-color:       #455E89;
   --text-size:        15px;
-  --hover-color:      gray;
-  --bkgd-color:       #F1DAC4;
+  --hover-color:      lightblue;
+  --bkgd-color:       #EBD4CB;
   
 }
 
 .distill-site-footer {
-  --text-color:       #892B64;
+  --text-color:       #455E89;
   --text-size:        15px;
-  --hover-color:      gray;
-  --bkgd-color:       #F1DAC4;
+  --hover-color:      lightblue;
+  --bkgd-color:       #EBD4CB;
 }
 
 a{
@@ -87,7 +87,6 @@ a{
   color: white;
   padding: 15px 32px;
   text-align: center;
-  text-decoration: none;
   display: inline-block;
   font-size: 16px;
   transition-duration: 0.4s;
@@ -104,9 +103,8 @@ a{
   border-radius: 8px;
   color: white;
   padding: 15px 32px;
-  width: 30%;
+  width: 35%;
   text-align: center;
-  text-decoration: none;
   display: inline-block;
   font-size: 16px;
   transition-duration: 0.4s;

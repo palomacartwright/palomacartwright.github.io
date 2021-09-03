@@ -86,26 +86,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>My Website: Paloma Cartwright</title>
+  <title>My Website: Paloma's Blog</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="My Website: Paloma Cartwright"/>
+  <meta property="og:title" content="My Website: Paloma&#39;s Blog"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="My Website"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="My Website: Paloma Cartwright"/>
+  <meta property="twitter:title" content="My Website: Paloma&#39;s Blog"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","editor_options"]}},"value":[{"type":"character","attributes":{},"value":["Paloma Cartwright"]},{"type":"NULL"},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["markdown"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["wrap"]}},"value":[{"type":"integer","attributes":{},"value":[72]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","listing"]}},"value":[{"type":"character","attributes":{},"value":["Paloma's Blog"]},{"type":"character","attributes":{},"value":["posts"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2396,12 +2396,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 </head>
 
-<body>
+<body class="layout-listing">
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Paloma Cartwright","authors":[]}
+{"title":"Paloma's Blog","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2423,9 +2423,218 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
+<!--radix_placeholder_article_listing-->
+
+
+<script type="application/javascript">
+
+function init_posts_list() {
+
+  function load_image(img) {
+    var src = $(img).attr('data-src');
+    if (src) {
+      $(img).attr('src', src);
+      $(img).load(function() {
+        img.removeAttribute('data-src');
+      });
+    }
+  }
+
+  function set_posts_visible(posts, visible) {
+    if (visible) {
+
+      // show bottom border by default
+      $(posts).removeClass('post-preview-last');
+
+      // apply limits if need be
+      var max_posts = 25;
+      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
+      if (apply_limits && posts.length > max_posts) {
+        posts = $(posts).slice(0, max_posts);
+      } else {
+        $('.posts-more a').addClass('hidden');
+      }
+
+      // apply last style
+      $(posts.slice(-1)[0]).addClass('post-preview-last');
+
+      $(posts).removeClass('hidden');
+      $(posts).find('img[data-src]').each(function(i, img) {
+        load_image(img);
+      });
+    } else {
+      $(posts).addClass('hidden');
+    }
+  }
+
+  function apply_hash_filter() {
+
+    // clear active state
+    $('.categories .active').removeClass('active');
+
+    // mark all posts invisible to start
+    set_posts_visible($('.posts-list').children('a'), false);
+
+    // if we have a hash filter
+    if (window.location.hash && window.location.hash.startsWith("#category:")) {
+
+      // mark posts that match the category visible
+      var page_category = window.location.hash.replace(/^#category:/, "");
+      var posts = $('.post-metadata').map(function(idx, script) {
+        var metadata = $.parseJSON($(script).html());
+        var post = null;
+        $.each(metadata.categories, function(idx, category) {
+          category = category.replace(/ /g,"_");
+          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
+            post = $(script).parent().get();
+            return false;
+          }
+        });
+        return post;
+      });
+      set_posts_visible(posts, true);
+
+      // mark the hash active
+      $('.categories li>a[href="' + window.location.hash + '"]').addClass('active');
+
+      // update the list_caption
+      var list_caption = $('.posts-list-caption');
+      var caption = (page_category || '').toLowerCase() === "articles"
+        ? list_caption.attr('data-caption')
+        : ('Category: ' + page_category.replace(/_/g," "));
+      list_caption.text(caption);
+
+    } else {
+
+      // no hash filter, make all posts visible (subject to max display)
+      set_posts_visible($('.posts-list').children(), true);
+
+      // reset list caption
+      var list_caption = $('.posts-list-caption');
+      list_caption.text(list_caption.attr('data-caption'));
+
+
+    }
+  }
+
+  // more articles
+  function apply_post_limits(apply) {
+    if (apply) {
+      $('.posts-container').addClass('posts-apply-limit');
+      $('.posts-more a').removeClass('hidden');
+    } else {
+      $('.posts-container').removeClass('posts-apply-limit');
+      $('.posts-more a').addClass('hidden');
+    }
+  }
+
+  // click handling for tags
+  $('.dt-tag').click(function(ev) {
+    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
+    return false;
+  })
+
+  // hash filter handling
+  apply_hash_filter();
+  $(window).on('hashchange',function() {
+    apply_post_limits(true);
+    apply_hash_filter();
+  });
+
+  // more articles link
+  $('.posts-more a').click(function(e) {
+    e.preventDefault();
+    apply_post_limits(false);
+    apply_hash_filter();
+    return false;
+  });
+
+}
+
+</script>
+
+
+
+<div class="posts-container posts-apply-limit l-page">
+<div class="posts-list">
+<h1 class="posts-list-caption" data-caption="Paloma&#39;s Blog">Paloma's Blog</h1>
+<a href="posts/2021-08-17-eds-221-week-2-blog-post/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Aug. 17, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Paloma Cartwright</div>
+</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>EDS 221 Week 2 Blog Post</h2>
+<div class="dt-tags"></div>
+<p>A blog post containing some of the material and things we've done in EDS 221.</p>
+</div>
+</a>
+<a href="posts/2021-08-10-diamondsdataset/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Aug. 10, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Paloma Cartwright</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="posts/2021-08-10-diamondsdataset/images/diamonds.png"/>
+</div>
+<div class="description">
+<h2>Exploring the Diamonds Dataset</h2>
+<div class="dt-tags"></div>
+<p>Using the diamonds dataset to explore ggplot functions and customization more.</p>
+</div>
+</a>
+<a href="posts/2021-08-10-function/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Aug. 10, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Paloma Cartwright</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="posts/2021-08-10-function/images/lter_penguins.png"/>
+</div>
+<div class="description">
+<h2>Using `ggplot` to Explore Palmer Penguins Datasets</h2>
+<div class="dt-tags"></div>
+<p>This blog post has graphs from the palmer penguins dataset.</p>
+</div>
+</a>
+<a href="posts/2021-08-10-hello/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Aug. 10, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Paloma Cartwright</div>
+</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>My First Blog Post</h2>
+<div class="dt-tags"></div>
+<p>First blog post for this website.</p>
+</div>
+</a>
+</div>
+<div class="posts-more">
+<a href="#">More articles &raquo;</a>
+</div>
+</div>
+<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Paloma Cartwright</h1>
+<h1>Paloma’s Blog</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2433,110 +2642,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <div class="d-article">
-<button class="resume-button">
-<a href="Paloma_Cartwright_Resume.pdf">Download Resume</a>
-</button>
-<h3 id="paloma-cartwright">Paloma Cartwright</h3>
-<p>6520 El Colegio Rd, Goleta, CA 93117 Phone: (805) 294-5880<br />
-Email: <a href="mailto:palomacartwright@bren.ucsb.edu" class="email">palomacartwright@bren.ucsb.edu</a></p>
-<h4 id="academic-background">Academic Background:</h4>
-<ul>
-<li><p>Master of Environmental Data Science</p>
-<ul>
-<li><p>Bren School of Environmental Science and Management, University of California Santa Barbara</p>
-<ul>
-<li>Expected June 2022</li>
-</ul></li>
-</ul></li>
-<li><p>Bachelor of Arts in Computer Science and Environment</p>
-<ul>
-<li><p>McGill University</p>
-<ul>
-<li>Completed June 2021</li>
-<li>Ministry of Higher Education, Quebec – Excellence Bursary for Computer Science 2021</li>
-<li>James McGill Scholarship for Academic Excellence and Outstanding Leadership</li>
-<li>VP Events – Caribbean Student Society (2020 - 2021)</li>
-</ul></li>
-</ul></li>
-<li><p>“Habla Ya” Spanish Immersion School</p>
-<ul>
-<li><p>Costa Rica</p>
-<ul>
-<li>March - April 2015</li>
-</ul></li>
-</ul></li>
-</ul>
-<h4 id="professional-experience">Professional Experience:</h4>
-<ul>
-<li><p>Information Technology Coordinator – Long Island Boat Rentals and Tours</p>
-<ul>
-<li><p>2016 – Present</p>
-<ul>
-<li>Coordinator for all technological aspects for the business including web development and social media management</li>
-</ul></li>
-</ul></li>
-<li><p>Intern – Bimini Biological Field Station Foundation</p>
-<ul>
-<li><p>June and July 2019</p>
-<ul>
-<li>Summer Intern at the Bimini Sharklab studying the marine environment around Bimini and the interactions of the animals that reside there, focusing primarily on Sharks and Stingrays.</li>
-</ul></li>
-</ul></li>
-<li><p>Summer Intern — Bahamas Sea Turtle Research Institute</p>
-<ul>
-<li><p>2014 – 2019</p>
-<ul>
-<li>Assisted with turtle tagging and data collection during summers with all turtle species present in The Islands of The Bahamas.</li>
-</ul></li>
-</ul></li>
-<li><p>Certified Instructor – Bahamas National Sailing School</p>
-<ul>
-<li><p>2014 – 2019</p>
-<ul>
-<li>Teaching sailing to children ages 8 – 16 in various sailboats at all levels of experience. Organized and directed of 1st Annual Mack Knowles Junior Sailing Club Summer Sailing Camp, leading a team of 5 Instructors and over 75 children.</li>
-</ul></li>
-</ul></li>
-<li><p>Junior Director of Tourism – Ministry of Tourism, Bahamas</p>
-<ul>
-<li><p>2016 – 2017</p>
-<ul>
-<li>Deputy Junior Minister of Tourism for the Bahamas and Junior Director of Tourism for Long Island.</li>
-</ul></li>
-</ul></li>
-<li><p>Intern — Bahamas Marine Mammal Research Organization</p>
-<ul>
-<li><p>2015</p>
-<ul>
-<li>Summer internship with the BMMRO studying populations of marine mammals surrounding Abaco, Bahamas, including dolphins, whales, and manatees</li>
-</ul></li>
-</ul></li>
-</ul>
-<h4 id="skills">Skills:</h4>
-<ul>
-<li>Proficient in R, Python, SQL, Java, CSS, HTML and JavaScript Coding Languages</li>
-<li>Experience using Github, Google Drive and Microsoft Office</li>
-<li>Web Development with JavaScript Certified – Lighthouse Labs, Montreal</li>
-<li>IANTD (Scuba) Certified</li>
-<li>Excellent Leadership and Communication Skills</li>
-<li>Strong Research, Editing, Writing and Analytical Skills</li>
-</ul>
-<h4 id="accomplishments">Accomplishments:</h4>
-<ul>
-<li>Ministry of Higher Education Quebec - Excellence in Computer Science Bursary 2021</li>
-<li>Bimini Sharklab Alf Thompson Memorial Scholarship Recipient 2019</li>
-<li>Marjorie Davis Award: Top National Exam Results – Bahamas Government Schools 2018</li>
-<li>National Top Female Sailor Under 18 Years Old, Bahamas (Optimist, Sunfish, Laser) 2010 - 2018</li>
-<li>All Bahamas Merit Scholar (Top Bahamas Ministry of Education Scholarship) 2017</li>
-<li>James McGill Entrance Scholarship 2017</li>
-<li>Long Island District Valedictorian 2017</li>
-<li>Qualified for Laser Youth World Championships, Ireland 2016</li>
-<li>Bahamas National Sailing Team, Canadian Olympic Regatta Kingston 2016</li>
-<li>2nd Place – Junior Minister of Tourism Competition Bahamas 2016</li>
-<li>Bahamas Olympic Committee “President’s Cup”, National Youth Awards 2015</li>
-<li>“Excellence in Sailing Award”, National Youth Awards 2015</li>
-<li>Bahamas National Spelling Bee Champion 2012</li>
-<li>Scripps National Spelling Bee Participant, Washington, DC, USA 2012</li>
-</ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
