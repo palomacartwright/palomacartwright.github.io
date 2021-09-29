@@ -1,10 +1,40 @@
 ---
-title: "About this site"
+title: "About Paloma"
 description: |
-  Some additional details about the website
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+<p class="body"> Paloma Cartwright grew up on a small island in The Bahamas, where she spent most of her days on the ocean. She developed a passion for nature at an early age while also
+experiencing firsthand the impacts of climate change on her home,
+surviving yearly hurricanes and witnessing the constant depletion of
+marine ecosystems surrounding her island. To gain the skills to solve
+these issues, she headed to McGill University where she completed a BA
+in Computer Science and Environment in June 2021. Throughout her
+undergraduate career, she interned with the Bahamas Sea Turtle Research
+Institute and the Bimini Biological Field Station Foundation - Sharklab.
+This work inspired her to dive into data science to develop the skills
+to do more with environmental data. Paloma decided to bridge the gap
+between her disciplines and enrolled in the Master of Environmental Data
+Science program at the Bren School of Environmental Science and
+Management. Her primary interests lie in climate change adaptation and
+her long-term goal is to use data science to advance solutions to the
+environmental problems faced by The Bahamas.
+</p>
+<p class="body">
+When Paloma is not at Bren working on her Master's degree, you can find
+her on the ocean somewhere. Sailing has been a guiding force in her life
+since she was 5 years old and stepped in a Pram for the first time. She
+has been sailing since then and has gone on to compete for Team Bahamas
+in Optimist and Laser Class from 2010 to present. Most recently, Paloma
+embarked on an Olympic Campaign in a Nacra 17 with fellow Bahamian Paul
+deSouza. Their aim was to compete in the 2024 Summer Olympics in Paris,
+France, but decided to pause the campaign due to Covid-19 health
+concerns. Thus, Paloma decided to attend the Bren School and complete
+her Master of Environmental Data Science.
+</p>

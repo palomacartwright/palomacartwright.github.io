@@ -117,7 +117,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["hello_files/anchor-4.2.2/anchor.min.js","hello_files/bowser-1.9.3/bowser.min.js","hello_files/distill-2.2.21/template.v2.js","hello_files/header-attrs-2.9/header-attrs.js","hello_files/jquery-1.11.3/jquery.min.js","hello_files/popper-2.6.0/popper.min.js","hello_files/tippy-6.2.7/tippy-bundle.umd.min.js","hello_files/tippy-6.2.7/tippy-light-border.css","hello_files/tippy-6.2.7/tippy.css","hello_files/tippy-6.2.7/tippy.umd.min.js","hello_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["hello_files/anchor-4.2.2/anchor.min.js","hello_files/bowser-1.9.3/bowser.min.js","hello_files/distill-2.2.21/template.v2.js","hello_files/header-attrs-2.10/header-attrs.js","hello_files/header-attrs-2.9/header-attrs.js","hello_files/jquery-1.11.3/jquery.min.js","hello_files/popper-2.6.0/popper.min.js","hello_files/tippy-6.2.7/tippy-bundle.umd.min.js","hello_files/tippy-6.2.7/tippy-light-border.css","hello_files/tippy-6.2.7/tippy.css","hello_files/tippy-6.2.7/tippy.umd.min.js","hello_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2200,6 +2200,9 @@ d-appendix {
 a{
   text-decoration: none;
 }
+li{
+  list-style: none;
+}
 
 .button{
   background-color: #0091AD; 
@@ -2222,7 +2225,7 @@ a{
 .link_buttons{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   text-decoration: none;
 }
 .resume-button{
@@ -2244,12 +2247,14 @@ a{
   color: #114B5F;
   text-decoration: none;
 }
-
-.bio{
+.intro{
+  text-align: center;
+}
+.body{
   text-align: justify;
 }
-.resume-body{
-  text-align: justify;
+.pull-right{
+  width: 30%;
 }
 
 
@@ -2409,7 +2414,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.9/header-attrs.js"></script>
+  <script src="../../site_libs/header-attrs-2.10/header-attrs.js"></script>
   <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2443,6 +2448,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 <div class="nav-right">
 <a href="../../index.html">Home</a>
+<a href="../../about.html">About</a>
 <a href="../../cv.html">Resume</a>
 <a href="../../blog.html">Blog</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
@@ -2467,8 +2473,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 
 <div class="d-article">
-<p>I will add actual information later, but for now, enjoy this hippie ipsum.</p>
-<p>Acaiberries gojiberries acid LSD ayahuasca acroyoga activatedcharcoal acunpuncture innatecapacity co-create, cleansing spiritualawakening hackysack lifecoach soulmate continuum aries. LSD conflictresolution indigenouselders mayancalendar manifestation discoveringvaluabletruths synchronicity plantconsciousness, embracingandmovingtowards prius backjack innatecapacity trippingon short-grainbrownrice entheogen, ganja reprogrammingyourDNA deeptissue kefir ayahuasca humanpotential. Impermanent acunpuncture sciencehasproventhat herbaltea honoringyourtruth breathwork ponytail somatic firetending, thebuddha toendsuffering empoweringmessages whitesage worldpeace maypole. Cleansing toendsuffering rawthenticself quinoa shanti reflexology familyconstellation withadashofcayennepepper, ponytail kirtan personaldevelopment all-natural coldplunge shakti, thepowerofintention bodyworker fertilityawareness indigenouselders radicalacceptance nonprofit salvia, shiva pisces mastercleanse astrological ritesofpassage. Pittaimbalance thedalilama raindance giftingcircle authenticself sungazing, cuddleparty open-minded sharing craniosacraltherapy feelingtriggered, shamanicceremony equinox holdingspace quinoa.</p>
+<p>This is the first blog post ever added to my website. It does not say very much because it is just a tester to demonstrate how distill websites work and how you create blog posts. As the quarter goes on, I will be adding more informational blog posts to my website. If you made it this deep, I hope you are enjoying my website. I am very new to making websites in RStudio using Distill, so please be patient with me as I work the kinks out over the next few months.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

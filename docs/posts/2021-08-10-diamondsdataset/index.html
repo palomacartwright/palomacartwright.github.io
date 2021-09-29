@@ -2200,6 +2200,9 @@ d-appendix {
 a{
   text-decoration: none;
 }
+li{
+  list-style: none;
+}
 
 .button{
   background-color: #0091AD; 
@@ -2222,7 +2225,7 @@ a{
 .link_buttons{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   text-decoration: none;
 }
 .resume-button{
@@ -2244,12 +2247,14 @@ a{
   color: #114B5F;
   text-decoration: none;
 }
-
-.bio{
+.intro{
+  text-align: center;
+}
+.body{
   text-align: justify;
 }
-.resume-body{
-  text-align: justify;
+.pull-right{
+  width: 30%;
 }
 
 
@@ -2443,6 +2448,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 <div class="nav-right">
 <a href="../../index.html">Home</a>
+<a href="../../about.html">About</a>
 <a href="../../cv.html">Resume</a>
 <a href="../../blog.html">Blog</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>

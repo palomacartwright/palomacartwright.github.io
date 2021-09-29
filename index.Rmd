@@ -7,22 +7,49 @@ editor_options:
     wrap: 72
 ---
 
-![Personal Picture](face.jpeg){width=25%}
 
-<p class="bio"> Paloma Cartwright grew up on a small island in The Bahamas, where she spent most of her days on the ocean. She developed a passion for nature at an early age while also  experiencing firsthand the impacts of climate change on her home, surviving yearly hurricanes and witnessing the constant depletion of marine ecosystems surrounding her island. To gain the skills to solve these issues, she headed to McGill University where she completed a BA in Computer Science and Environment in June 2021. Throughout her undergraduate career, she interned with the Bahamas Sea Turtle Research Institute and the Bimini Biological Field Station Foundation - Sharklab. This work inspired her to dive into data science to develop the skills to do more with environmental data. Paloma decided to bridge the gap between her disciplines and enrolled in the Master of Environmental Data Science program at the Bren School of Environmental Science and Management. Her primary interests lie in climate change adaptation and her long-term goal is to use data science to advance solutions to the environmental problems faced by The Bahamas. 
+<center>
+![](face.jpeg){width="35%"}
+</center>  
+
+<br>
+  
+<p class="intro">
+As a Bahamian "sailor gal," I grew up spending all of my free time sailing or on beach somewhere on my tiny island, Long Island. My childhood inspired my love for the ocean and has been a guiding force in my life.
 </p>
 
-<ul class = "link_buttons">
-  <a href="https://www.linkedin.com/in/paloma-cartwright-257b85171/">
-    <button class="button"> LinkedIn </button>
-  </a>
-  <a href="https://github.com/palomacartwright">
-    <button class="button">Github </button>
-  </a>
-   <a href="palomacartwright@bren.ucsb.edu">
-    <button class="button">Email </button>
-  </a>
-  <a href="https://twitter.com/palomacart">
-    <button class="button">Twitter </button>
-  </a>
+<p class="intro">
+My life and educational journey has led me to become a Master of Environmental Data Science student at the Bren School of Environmental Science and Management at UCSB.
+</p>
+
+<ul class="link_buttons">
+
+<li>
+
+<a href="https://www.linkedin.com/in/paloma-cartwright-257b85171/">
+<button class="button"> LinkedIn </button> </a>
+
+</li>
+
+<li>
+
+<a href="https://github.com/palomacartwright">
+<button class="button">Github </button> </a>
+
+</li>
+
+<li>
+
+<a href="palomacartwright@bren.ucsb.edu"> <button class="button">Email
+</button> </a>
+
+</li>
+
+<li>
+
+<a href="https://twitter.com/palomacart"> <button class="button">Twitter
+</button> </a>
+
+</li>
+
 </ul>

@@ -54,7 +54,6 @@ ggplot(data = diamonds, aes(x = carat, fill = color)) +
 This outputs a really ridiculous set of graphs, but that is the purpose of the ggpairs function. 
 
 ```{r}
-
 GGally::ggpairs(diamonds)
 ```
 

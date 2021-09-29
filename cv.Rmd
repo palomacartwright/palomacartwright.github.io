@@ -20,7 +20,7 @@ Tel: (805) 294-5880 \|
 Santa Barbara, CA 
 
 ### **EDUCATION**
-<p class="resume-body">
+<p class="body">
 **Master of Environmental Data Science** (Expected June 2022)
 
 **Bren School of Environmental Science and Management, University of
@@ -50,7 +50,7 @@ School United Nations Symposiums (09/18 -- 01/20)
 </p>
 
 ### **PROFESSIONAL EXPERIENCE**
-<p class="resume-body">
+<p class="body">
 **Whale Safe Intern -- Benioff Ocean Initiative,** Santa Barbara,
 California (09/21 -- Present)
 
@@ -108,7 +108,7 @@ The Bahamas (06/15)
 </p>
 
 #### ADDITIONAL EXPERIENCE
-<p class="resume-body">
+<p class="body">
 
 **Head Coach -- Mack Knowles Junior Sailing Club,** Long Island, The
 Bahamas (6/18 -- 8/19)
@@ -135,7 +135,5 @@ Development with JavaScript Certified
 
 
 <button class="resume-button">
-
 [Download Resume](PalomaCartwright_Resume.pdf)
-
 </button>
