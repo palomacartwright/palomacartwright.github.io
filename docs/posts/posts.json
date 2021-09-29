@@ -10,10 +10,13 @@
       }
     ],
     "date": "2021-08-17",
-    "categories": [],
+    "categories": [
+      "R",
+      "tidyr"
+    ],
     "contents": "\nI will edit this post and add in all of the required things throughout the week.\nThroughout EDS 221, we have done extensive work with programming techniques and one of the most fascinating ones for me was the tidyr functions pivot_wider and pivot_longer to tidy data so that it can be used later. It is always fun to see how data can be graphed using the various functions in R like ggplot.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-17T09:14:50-07:00",
+    "last_modified": "2021-09-29T14:03:28-07:00",
     "input_file": {}
   },
   {
@@ -27,11 +30,16 @@
       }
     ],
     "date": "2021-08-10",
-    "categories": [],
+    "categories": [
+      "R",
+      "GGally"
+    ],
     "contents": "\nUsing GGally and ggplot to Explore the Diamonds data set\nUsing ggplot\nCreating a Scatter Plot\nCreating a scatter plot of carat versus price of the diamonds data set.\n\n\n\nGenerally, as the carats increase, the price of the diamonds also increase.\nCreating a Histogram\nCreating a histogram of the carats of diamonds in the dataset\n\n\n\nUsing GGally\nThis outputs a really ridiculous set of graphs, but that is the purpose of the ggpairs function.\n\n\n\n\n\n\n",
     "preview": "posts/2021-08-10-diamondsdataset/images/diamonds.png",
-    "last_modified": "2021-08-10T11:02:04-07:00",
-    "input_file": {}
+    "last_modified": "2021-09-29T14:01:18-07:00",
+    "input_file": {},
+    "preview_width": 384,
+    "preview_height": 451
   },
   {
     "path": "posts/2021-08-10-function/",
@@ -44,11 +52,17 @@
       }
     ],
     "date": "2021-08-10",
-    "categories": [],
+    "categories": [
+      "R",
+      "ggplot",
+      "palmerpenguins"
+    ],
     "contents": "\nExploring Palmer Penguins\nThis is a graph using ggplot to display the flipper length and body mass relation of the palmer penguins dataset.\n\n\n\n\n\n\n",
     "preview": "posts/2021-08-10-function/images/lter_penguins.png",
-    "last_modified": "2021-08-10T10:42:59-07:00",
-    "input_file": {}
+    "last_modified": "2021-09-29T14:02:25-07:00",
+    "input_file": {},
+    "preview_width": 1800,
+    "preview_height": 1074
   },
   {
     "path": "posts/2021-08-10-hello/",

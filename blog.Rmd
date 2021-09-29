@@ -1,4 +1,15 @@
 ---
 title: "Paloma's Blog"
+description: |
 listing: posts
 ---
+
+<br> 
+
+## Coding, Sailing & The Bahamas: 
+### All of my favorite things
+
+<p class="body">Welcome to my blog! As I grow through my journey as a data scientist, I will update this periodically with whatever I see fit. Sometimes I'll feature The Bahamas, other times it will be fun code, other times who knows, but welcome to this journey with me. 
+</p>
+
+--- 

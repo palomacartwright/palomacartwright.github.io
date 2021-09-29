@@ -65,7 +65,7 @@ d-appendix {
   --title-size:       18px;
   --text-color:       #455E89;
   --text-size:        15px;
-  --hover-color:      lightblue;
+  --hover-color:      #1780A1;
   --bkgd-color:       #EBD4CB;
   
 }
@@ -73,7 +73,7 @@ d-appendix {
 .distill-site-footer {
   --text-color:       #455E89;
   --text-size:        15px;
-  --hover-color:      lightblue;
+  --hover-color:      #1780A1;
   --bkgd-color:       #EBD4CB;
 }
 

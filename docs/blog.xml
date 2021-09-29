@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Paloma Cartwright</title>
+    <link>palomacartwright.github.io</link>
+    <atom:link href="palomacartwright.github.io/blog.xml" rel="self" type="application/rss+xml"/>
+    <description>Personal Website
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Tue, 17 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>EDS 221 Week 2 Blog Post</title>
+      <dc:creator>Paloma Cartwright</dc:creator>
+      <link>palomacartwright.github.io/posts/2021-08-17-eds-221-week-2-blog-post</link>
+      <description>A blog post containing some of the material and things we've done in EDS 221.</description>
+      <category>R</category>
+      <category>tidyr</category>
+      <guid>palomacartwright.github.io/posts/2021-08-17-eds-221-week-2-blog-post</guid>
+      <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Exploring the Diamonds Dataset</title>
+      <dc:creator>Paloma Cartwright</dc:creator>
+      <link>palomacartwright.github.io/posts/2021-08-10-diamondsdataset</link>
+      <description>Using the diamonds dataset to explore ggplot functions and customization more.</description>
+      <category>R</category>
+      <category>GGally</category>
+      <guid>palomacartwright.github.io/posts/2021-08-10-diamondsdataset</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="palomacartwright.github.io/posts/2021-08-10-diamondsdataset/images/diamonds.png" medium="image" type="image/png" width="384" height="451"/>
+    </item>
+    <item>
+      <title>Using `ggplot` to Explore Palmer Penguins Datasets</title>
+      <dc:creator>Paloma Cartwright</dc:creator>
+      <link>palomacartwright.github.io/posts/2021-08-10-function</link>
+      <description>This blog post has graphs from the palmer penguins dataset.</description>
+      <category>R</category>
+      <category>ggplot</category>
+      <category>palmerpenguins</category>
+      <guid>palomacartwright.github.io/posts/2021-08-10-function</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="palomacartwright.github.io/posts/2021-08-10-function/images/lter_penguins.png" medium="image" type="image/png" width="1800" height="1074"/>
+    </item>
+    <item>
+      <title>My First Blog Post</title>
+      <dc:creator>Paloma Cartwright</dc:creator>
+      <link>palomacartwright.github.io/posts/2021-08-10-hello</link>
+      <description>First blog post for this website.</description>
+      <guid>palomacartwright.github.io/posts/2021-08-10-hello</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

@@ -6,6 +6,10 @@ author:
   - name: Paloma Cartwright
     url: {}
 date: 08-10-2021
+slug: cartwright2021exploringthediamondsdataset
+categories:
+  - R
+  - GGally
 output:
   distill::distill_article:
     self_contained: false

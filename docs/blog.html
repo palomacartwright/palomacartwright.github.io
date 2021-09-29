@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
   <meta name="generator" content="distill" />
+  <link rel="alternate" type="application/rss+xml" href="palomacartwright.github.io/blog.xml" />
 
   <style type="text/css">
   /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
@@ -105,7 +106,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","listing"]}},"value":[{"type":"character","attributes":{},"value":["Paloma's Blog"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","listing"]}},"value":[{"type":"character","attributes":{},"value":["Paloma's Blog"]},{"type":"NULL"},{"type":"character","attributes":{},"value":["posts"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2174,7 +2175,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --title-size:       18px;
     --text-color:       #455E89;
     --text-size:        15px;
-    --hover-color:      lightblue;
+    --hover-color:      #1780A1;
     --bkgd-color:       #EBD4CB;
     
   }
@@ -2182,7 +2183,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   .distill-site-footer {
     --text-color:       #455E89;
     --text-size:        15px;
-    --hover-color:      lightblue;
+    --hover-color:      #1780A1;
     --bkgd-color:       #EBD4CB;
   }
 
@@ -2439,6 +2440,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <a href="about.html">About</a>
 <a href="cv.html">Resume</a>
 <a href="blog.html">Blog</a>
+<a href="https://github.com/palomacartwright/palomacartwright.github.io" aria-label="Link to source">
+<i class="fab fa-github" aria-hidden="true"></i>
+</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -2578,11 +2582,11 @@ function init_posts_list() {
 
 
 
-<div class="posts-container posts-apply-limit l-page">
+<div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
 <h1 class="posts-list-caption" data-caption="Paloma&#39;s Blog">Paloma's Blog</h1>
 <a href="posts/2021-08-17-eds-221-week-2-blog-post/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["R","tidyr"]}</script>
 <div class="metadata">
 <div class="publishedDate">Aug. 17, 2021</div>
 <div class="dt-authors">
@@ -2594,12 +2598,15 @@ function init_posts_list() {
 </div>
 <div class="description">
 <h2>EDS 221 Week 2 Blog Post</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">R</div>
+<div class="dt-tag">tidyr</div>
+</div>
 <p>A blog post containing some of the material and things we've done in EDS 221.</p>
 </div>
 </a>
 <a href="posts/2021-08-10-diamondsdataset/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["R","GGally"]}</script>
 <div class="metadata">
 <div class="publishedDate">Aug. 10, 2021</div>
 <div class="dt-authors">
@@ -2611,12 +2618,15 @@ function init_posts_list() {
 </div>
 <div class="description">
 <h2>Exploring the Diamonds Dataset</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">R</div>
+<div class="dt-tag">GGally</div>
+</div>
 <p>Using the diamonds dataset to explore ggplot functions and customization more.</p>
 </div>
 </a>
 <a href="posts/2021-08-10-function/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["R","ggplot","palmerpenguins"]}</script>
 <div class="metadata">
 <div class="publishedDate">Aug. 10, 2021</div>
 <div class="dt-authors">
@@ -2628,7 +2638,11 @@ function init_posts_list() {
 </div>
 <div class="description">
 <h2>Using `ggplot` to Explore Palmer Penguins Datasets</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">R</div>
+<div class="dt-tag">ggplot</div>
+<div class="dt-tag">palmerpenguins</div>
+</div>
 <p>This blog post has graphs from the palmer penguins dataset.</p>
 </div>
 </a>
@@ -2650,6 +2664,37 @@ function init_posts_list() {
 </div>
 </a>
 </div>
+<div class="posts-sidebar">
+<div class="sidebar-section categories">
+<h3>Categories</h3>
+<ul>
+<li>
+<a href="#category:Articles">Articles</a>
+<span class="category-count">(4)</span>
+</li>
+<li>
+<a href="#category:GGally">GGally</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:ggplot">ggplot</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:palmerpenguins">palmerpenguins</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:R">R</a>
+<span class="category-count">(3)</span>
+</li>
+<li>
+<a href="#category:tidyr">tidyr</a>
+<span class="category-count">(1)</span>
+</li>
+</ul>
+</div>
+</div>
 <div class="posts-more">
 <a href="#">More articles &raquo;</a>
 </div>
@@ -2665,6 +2710,13 @@ function init_posts_list() {
 
 
 <div class="d-article">
+<p><br></p>
+<h2 id="coding-sailing-the-bahamas">Coding, Sailing &amp; The Bahamas:</h2>
+<h3 id="all-of-my-favorite-things">All of my favorite things</h3>
+<p class="body">
+Welcome to my blog! As I grow through my journey as a data scientist, I will update this periodically with whatever I see fit. Sometimes I’ll feature The Bahamas, other times it will be fun code, other times who knows, but welcome to this journey with me.
+</p>
+<hr />
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

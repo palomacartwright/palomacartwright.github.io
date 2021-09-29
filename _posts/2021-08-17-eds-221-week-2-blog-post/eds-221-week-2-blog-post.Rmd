@@ -6,6 +6,10 @@ author:
   - name: Paloma Cartwright
     url: {}
 date: 08-17-2021
+slug: cartwright2021eds221blog
+categories: 
+  - R 
+  - tidyr
 output:
   distill::distill_article:
     self_contained: false
