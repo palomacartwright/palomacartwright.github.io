@@ -86,20 +86,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>My Website: Paloma's Blog</title>
+  <title>Paloma Cartwright: Paloma's Blog</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="My Website: Paloma&#39;s Blog"/>
+  <meta property="og:title" content="Paloma Cartwright: Paloma&#39;s Blog"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="My Website"/>
+  <meta property="og:site_name" content="Paloma Cartwright"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="My Website: Paloma&#39;s Blog"/>
+  <meta property="twitter:title" content="Paloma Cartwright: Paloma&#39;s Blog"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
@@ -2142,6 +2142,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --body-font:       Andada Pro;
     --navbar-font:     Lora; 
     /* websites + blogs only */
+    
   }
 
   /*-- ARTICLE METADATA --*/
@@ -2194,34 +2195,50 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     border: none;
     border-radius: 8px;
     color: white;
-    padding: 15px 32px;
+    padding: 15px 15px;
     text-align: center;
     display: inline-block;
     font-size: 16px;
     transition-duration: 0.4s;
+    text-decoration: none;
   }
 
   .button:hover {
     background-color: #EBD4CB;
     color: #114B5F;
+    text-decoration: none;
   }
-
+  .link_buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-decoration: none;
+  }
   .resume-button{
     background-color: #0091AD; 
     border: none;
     border-radius: 8px;
     color: white;
-    padding: 15px 32px;
+    padding: 15px 15px;
     width: 35%;
     text-align: center;
     display: inline-block;
     font-size: 16px;
     transition-duration: 0.4s;
+    text-decoration: none;
   }
 
   .resume-button:hover {
     background-color: #EBD4CB;
     color: #114B5F;
+    text-decoration: none;
+  }
+
+  .bio{
+    text-align: justify;
+  }
+  .resume-body{
+    text-align: justify;
   }
 
 
@@ -2409,7 +2426,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
-<a href="index.html" class="title">My Website</a>
+<a href="index.html" class="title">Paloma Cartwright</a>
 <input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
 </div>
 <div class="nav-right">

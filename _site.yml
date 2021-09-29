@@ -1,7 +1,7 @@
 name: "palomacartwright.github.io"
-title: "My Website"
+title: "Paloma Cartwright"
 description: |
-  Paloma Cartwright
+  Personal Website
 output_dir: "docs"
 navbar:
   right:

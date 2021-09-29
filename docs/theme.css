@@ -33,6 +33,7 @@ html {
   --body-font:       Andada Pro;
   --navbar-font:     Lora; 
   /* websites + blogs only */
+  
 }
 
 /*-- ARTICLE METADATA --*/
@@ -85,34 +86,50 @@ a{
   border: none;
   border-radius: 8px;
   color: white;
-  padding: 15px 32px;
+  padding: 15px 15px;
   text-align: center;
   display: inline-block;
   font-size: 16px;
   transition-duration: 0.4s;
+  text-decoration: none;
 }
 
 .button:hover {
   background-color: #EBD4CB;
   color: #114B5F;
+  text-decoration: none;
 }
-
+.link_buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-decoration: none;
+}
 .resume-button{
   background-color: #0091AD; 
   border: none;
   border-radius: 8px;
   color: white;
-  padding: 15px 32px;
+  padding: 15px 15px;
   width: 35%;
   text-align: center;
   display: inline-block;
   font-size: 16px;
   transition-duration: 0.4s;
+  text-decoration: none;
 }
 
 .resume-button:hover {
   background-color: #EBD4CB;
   color: #114B5F;
+  text-decoration: none;
+}
+
+.bio{
+  text-align: justify;
+}
+.resume-body{
+  text-align: justify;
 }
 
 
