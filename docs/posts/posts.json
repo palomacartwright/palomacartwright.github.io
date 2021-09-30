@@ -1,5 +1,28 @@
 [
   {
+    "path": "posts/2021-09-29-mappractice/",
+    "title": "Map Making",
+    "description": "This is a blog post that is my journey on how to make maps.",
+    "author": [
+      {
+        "name": "Paloma Cartwright",
+        "url": {}
+      }
+    ],
+    "date": "2021-09-29",
+    "categories": [
+      "R",
+      "spData",
+      "tmap"
+    ],
+    "contents": "\n\nContents\nLet’s Make Some Maps\ntmap basics\ntmap aesthetics\nColor Settings\n\n\nLet’s Make Some Maps\ntmap basics\nThis is a blog post about my process navigating chapter 8 in GeoComputation with R for EDS 223. I don’t know where this journey will take me, but I figured that I’d make a blog post about my process as I make some cool maps and learn how to use tmap.\nMaking a basic map of New Zealand with tmap. The New Zealand object comes from the sf data\ntm_polygons() combines both tm_fill() and tm_borders() so map_nz1 and map_nz2 below are the same.\n\n\nShow code\n\nmap_nz1 <- tm_shape(nz) +\n  tm_fill() + \n  tm_borders() \n\nmap_nz2 <- tm_shape(nz) + tm_polygons()\nmap_nz2\n\n\n\n\nCombining multiple layers\ntm_raster() plots a raster layer and the argument alpha is the transparency of that layer\n\n\nShow code\n\nmap_nz3 <- map_nz2 + tm_shape(nz_elev) +\n  tm_raster(alpha = 0.7) \nmap_nz3\n\n\n\n\nNew Zealand water addition\n\n\nShow code\n\nnz_water <- st_union(nz) %>% #returns a single geometry with resolved boundaries\n  st_buffer(22200) %>% #computes a buffer around this geometry\n  st_cast(to = \"LINESTRING\") #cast geometry to another type\n\nmap_nz4 <- map_nz3 + \n  tm_shape(nz_water) + tm_lines()\nmap_nz4\n\n\n\n\nAdding the height element to the map of New Zealand\n\n\nShow code\n\nmap_nz5 <- map_nz4 + \n  tm_shape(nz_height) + tm_dots()\n\nmap_nz5\n\n\n\n\nTo combine different maps using tmap in a similar way as you would use patchwork in ggplot you do the following:\n\n\nShow code\n\ntmap_arrange(map_nz3, map_nz4, map_nz5)\n\n\n\n\ntmap aesthetics\nThe common aesthetics for fill and border layers are color col , transparency alpha , line width lwd and line typelty.\n\n\nShow code\n\nmap1 <- tm_shape(nz) + tm_fill(col = \"green\")\nmap2 <- tm_shape(nz) + tm_fill(col = \"red\", alpha = 0.5)\nmap3 <- tm_shape(nz) + tm_borders(col = \"darkgrey\")\nmap4 <- tm_shape(nz) + tm_borders(lwd = 2)\nmap5 <- tm_shape(nz) + tm_borders(lty = 3)\nmap6 <- tm_shape(nz) + tm_fill(col = \"green\", alpha = 0.5) +\n  tm_borders(col = \"darkgrey\", lwd = 2, lty = 3)\ntmap_arrange(map1, map2, map3, map4, map5, map6)\n\n\n\n\nYou cannot use a column name in tmap like you can in R to set the aesthetic of a variable like color, but instead you have to put it in quotations. You can treat plot the same way as you would R though. Hopefully, I am understanding this correctly.\n\n\nShow code\n\n# tm_shape(nz) + tm_fill(col = nz$Land_area) This line fails\nplot(st_geometry(nz), col = nz$Land_area) # This works because plot has the same functionality as R\n\n\n\nShow code\n\ntm_shape(nz) + tm_fill(col = \"Land_area\") #The color aesthetic has to be in quotes here \n\n\n\n\nTo add a title in the legend of the aesthetic you are using, you define this in the same place as you define the aesthetic. expression() is used in the commented seciton below to add the special script for the squared kilometers. If you do not need fancy text, you can just put your title in quotes.\n\n\nShow code\n\n#legend_title = expression(\"Area (km\"^2*\")\") \nlegend_title = \"Area in Kilometers Squared\"\nmap_nza = tm_shape(nz) +\n  tm_fill(col = \"Land_area\", title = legend_title) + tm_borders(lwd = 1.5)\nmap_nza\n\n\n\n\nColor Settings\n\n\nShow code\n\ntm_shape(nz) + tm_polygons(col = \"Median_income\")\n\n\n\nShow code\n\nbreaks = c(0, 3, 4, 5) * 10000\ntm_shape(nz) + tm_polygons(col = \"Median_income\", breaks = breaks)\n\n\n\nShow code\n\ntm_shape(nz) + tm_polygons(col = \"Median_income\", n = 10)\n\n\n\nShow code\n\ntm_shape(nz) + tm_polygons(col = \"Median_income\", palette = \"viridis\")\n\n\n\n\nThis is all the map work I’ve done for the day! Stay tuned, maybe there will be more.\n\n\n\n",
+    "preview": "posts/2021-09-29-mappractice/mappractice_files/figure-html5/unnamed-chunk-1-1.png",
+    "last_modified": "2021-09-30T09:29:19-07:00",
+    "input_file": "mappractice.knit.md",
+    "preview_width": 1248,
+    "preview_height": 768
+  },
+  {
     "path": "posts/2021-08-17-eds-221-week-2-blog-post/",
     "title": "EDS 221 Week 2 Blog Post",
     "description": "A blog post containing some of the material and things we've done in EDS 221.",

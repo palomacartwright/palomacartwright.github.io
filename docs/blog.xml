@@ -7,7 +7,19 @@
     <description>Personal Website
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 17 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Map Making</title>
+      <dc:creator>Paloma Cartwright</dc:creator>
+      <link>palomacartwright.github.io/posts/2021-09-29-mappractice</link>
+      <description>This is a blog post that is my journey on how to make maps.</description>
+      <category>R</category>
+      <category>spData</category>
+      <category>tmap</category>
+      <guid>palomacartwright.github.io/posts/2021-09-29-mappractice</guid>
+      <pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate>
+      <media:content url="palomacartwright.github.io/posts/2021-09-29-mappractice/mappractice_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>EDS 221 Week 2 Blog Post</title>
       <dc:creator>Paloma Cartwright</dc:creator>
