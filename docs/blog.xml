@@ -7,7 +7,19 @@
     <description>Personal Website
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 29 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>My Favorite Beaches on Long Island</title>
+      <dc:creator>Paloma Cartwright</dc:creator>
+      <link>palomacartwright.github.io/posts/2021-10-14-my-favorite-beaches-on-long-island</link>
+      <description>A fun intro to my life outside of Data Science</description>
+      <category>The Bahamas</category>
+      <category>Long Island</category>
+      <category>Beaches</category>
+      <guid>palomacartwright.github.io/posts/2021-10-14-my-favorite-beaches-on-long-island</guid>
+      <pubDate>Thu, 14 Oct 2021 00:00:00 +0000</pubDate>
+      <media:content url="palomacartwright.github.io/posts/2021-10-14-my-favorite-beaches-on-long-island/img/DSC_0213.jpeg" medium="image" type="image/jpeg"/>
+    </item>
     <item>
       <title>Map Making</title>
       <dc:creator>Paloma Cartwright</dc:creator>
