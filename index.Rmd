@@ -40,7 +40,7 @@ My life and educational journey has led me to become a Master of Environmental D
 
 <li>
 
-<a href="palomacartwright@bren.ucsb.edu"> <button class="button">Email
+<a href="mailto:palomacartwright@bren.ucsb.edu"> <button class="button">Email
 </button> </a>
 
 </li>
