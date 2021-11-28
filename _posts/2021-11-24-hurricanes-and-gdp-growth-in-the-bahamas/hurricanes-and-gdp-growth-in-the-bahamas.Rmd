@@ -52,9 +52,7 @@ For the analysis of this research question, data from the National Hurricane Cen
 
 ## GDP Growth Data
 
-The data for annual percentage of GDP Growth was collected from The World Bank Data Repository. This data covers annual percentage of GDP growth from 1961 to present for The Bahamas. The metadata containing information about calculations and sampling strategy can be found [here](https://databank.worldbank.org/reports.aspx?source=2&type=metadata&series=NY.GDP.MKTP.KD.ZG).  
-
--   World Bank. (2021). GDP growth (annual %)---Bahamas, The \| Data. <https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=BS>
+The data for annual percentage of GDP Growth was collected from The World Bank Data Repository (World Bank, 2021). This data covers annual percentage of GDP growth from 1961 to present for The Bahamas. The metadata containing information about calculations and sampling strategy can be found [here](https://databank.worldbank.org/reports.aspx?source=2&type=metadata&series=NY.GDP.MKTP.KD.ZG).
 
 ### Data I/O and Tidying
 
@@ -84,9 +82,9 @@ ggplot(data = gdp_growth, aes(x = year, y = gdp_growth)) +
 
 ## Hurricane Data
 
-The data on hurricanes in The Bahamas was collected from the National Hurricane Center's Data Archive (National Hurricane Center, 2021). This dataset did not exist in csv format, so I looked through the yearly reports from 1960 to present and recorded all of the storms that impacted The Bahamas. I made note of the year each storm occurred, the name of the storm, the intensity and the number of islands in The Bahamas that were impacted by each storm.
+The data on hurricanes in The Bahamas was collected from the National Hurricane Center's Data Archive (National Hurricane Center, 2021a). This dataset did not exist in csv format, so I looked through the yearly reports from 1960 to present and recorded all of the storms that impacted The Bahamas. I made note of the year each storm occurred, the name of the storm, the intensity and the number of islands in The Bahamas that were impacted by each storm.
 
-In creation of this dataset, I recorded storm intensity from 1 to 6, with 1 being Tropical Storms and 6 being a category 5 hurricane. The Saffir-Simpson Wind Scale considers a tropical storm anything with winds below 74mph (National Hurricane Center, 2021), but I know that these storm can still have damaging impacts on countries so I wanted to ensure they were included in the data to be analyzed for this question.
+In creation of this dataset, I recorded storm intensity from 1 to 6, with 1 being Tropical Storms and 6 being a category 5 hurricane. The Saffir-Simpson Wind Scale considers a tropical storm anything with winds below 74mph (National Hurricane Center, 2021b), but I know that these storms can still have damaging impacts on countries so I wanted to ensure they were included in the data to be analyzed for this question.
 
 ### Data I/O, Tidying and Visualization
 
@@ -142,26 +140,23 @@ hgdp <- full_join(gdp_growth, yr_storms, by = 'year') %>%
 
 # Analysis
 
-## Plan 
+## Plan
 
 **Clearly describe your analysis plan** *What is your analysis plan? Why did you choose this analysis, given your data and question? What are the limitations?*
 
-For this analysis I'm going to first look at a linear regression of the impact of yearly number hurricanes and their average strength on annual percentage of GDP growth. I will then perform hypothesis testing to evaluate if there is a difference in GDP growth between years with hurricanes versus years without. 
+For this analysis I'm going to first look at a linear regression of the impact of yearly number hurricanes and their average strength on annual percentage of GDP growth. I will then perform hypothesis testing to evaluate if there is a difference in GDP growth between years with hurricanes versus years without.
 
-I decided to use multiple linear regression to evaluate the relation between hurricanes and annual percentage of GDP growth because I wanted to avoid one omitted variable that can lead to bias. The stronger a hurricane, the more damage it inflicts on a location so I did not just want to look at the number of hurricanes in a given year but also how strong they are. 
+I decided to use multiple linear regression to evaluate the relation between hurricanes and annual percentage of GDP growth because I wanted to avoid one omitted variable that can lead to bias. The stronger a hurricane, the more damage it inflicts on a location so I did not just want to look at the number of hurricanes in a given year but also how strong they are.
 
-I decided to to use hypothesis testing to evaluate whether there was a difference in years with and without hurricanes and this further allows me to analyze the lag effect of hurricanes on annual percentage of GDP growth in The Bahamas by comparing the p-value at year 0 and then at two years later. 
+Hypothesis testing will be used to evaluate whether there was a difference in years with and without hurricanes. Further, I will investigate if there is a lag effect of hurricanes on annual percentage of GDP growth in The Bahamas by comparing the p-value for a year with a hurricane and then at years where there was a hurricane two years prior.
 
-The biggest limitation in answering my research question is the known fact that more that the impact of hurricanes affect the annual GDP growth of The Bahamas so there is a likely chance that my results will be inconclusive because of omitted variables in GDP growth. 
-
-**edit why I chose this analysis and what the limitations are**
+The biggest limitation in answering my research question is the known fact that more than the impact of hurricanes affect the annual GDP growth of The Bahamas so there is a likely chance that my results will be inconclusive because of omitted variables in GDP growth.
 
 ## Results
 
-**Summarize your results visually and in words** *Show us your results in figure(s) and/or 
-table(s) that are carefully labeled and captioned. Describe in the text what you found, and how these results either do or do not help you answer your question.*
+**Summarize your results visually and in words** *Show us your results in figure(s) and/or table(s) that are carefully labeled and captioned. Describe in the text what you found, and how these results either do or do not help you answer your question.*
 
-### Linear Regression Summary 
+### Linear Regression Summary
 
 ```{r}
 gdp_num_strength <- lm(gdp_growth ~ number + avg_strength, data = hgdp) %>%
@@ -174,8 +169,8 @@ gdp_num_strength
 
 mod <- lm(gdp_growth ~ number + avg_strength, data = hgdp)
 ```
-This linear regression tells us that the annual percentage of GDP growth in The Bahamas without the impact of Hurricanes is `r round(mod$coefficients[1], 2)`. With an increase in number of hurricanes per year by 1, ignoring their intensity, the annual percentage of GDP Growth decreases by `r round(mod$coefficients[2], 2)`. When observing the impact of average strength of hurricanes on GDP growth, with an increase in 1 category of hurricane intensity, ignoring the number of storms, the annual percentage of GDP growth increases by `r round(mod$coefficients[3], 2)`
 
+This linear regression tells us that the annual percentage of GDP growth in The Bahamas without the impact of Hurricanes is `r round(mod$coefficients[1], 2)`. With an increase in number of hurricanes per year by 1, ignoring their intensity, the annual percentage of GDP Growth decreases by `r round(mod$coefficients[2], 2)`. When observing the impact of average strength of hurricanes on GDP growth, with an increase in 1 category of hurricane intensity, ignoring the number of storms, the annual percentage of GDP growth increases by `r round(mod$coefficients[3], 2)`
 
 ```{r}
 hgdp %>% 
@@ -187,7 +182,7 @@ hgdp %>%
        title = "Yearly GDP Growth and Number of Hurricanes with Regression Line")
 ```
 
-A negative correlation between annual percentage of GDP Growth and annual mean number of storms is displayed in this graph. 
+A negative correlation between annual percentage of GDP Growth and annual mean number of storms is displayed in this graph.
 
 ```{r}
 hgdp %>% 
@@ -199,27 +194,15 @@ hgdp %>%
        title = "Yearly GDP Growth and Strength of Hurricanes with Regression Line")
 ```
 
-There is a slight positive correlation seen between annual percent GDP growth and the average strength of storms. This positive correlation highlights that there are likely many omitted variables in the data as well as the possibility of a lagged effect. 
+There is a slight positive correlation seen between annual percent GDP growth and the average strength of storms. This positive correlation highlights that there are likely many omitted variables in the data as well as the possibility of a lagged effect.
 
-We can visualize the relationship between all three variables in a hyperplane. 
-
-```{r}
-plot_ly(data = hgdp, z = ~gdp_growth, x = ~number, y = ~avg_strength, color = gdp_growth) %>%
-  layout(scene = list(xaxis = list(title = "Number of Storms"), 
-                      yaxis = list(title = "Average Strength of Storms"), 
-                      zaxis = list(title = "Annual % GDP Growth")))
-```
-
-
-### Hypothesis Testing 
+### Hypothesis Testing
 
 #### Test 1
 
-I will construct a null and alternative hypothesis that will allow me to evaluate if there is a difference in annual GDP growth for years without storms vs years with storms. 
+I will construct a null and alternative hypothesis that will allow me to evaluate if there is a difference in annual GDP growth for years without storms vs years with storms.
 
-$$H_{0}: \mu_{nostorms} - \mu_{storms} = 0$$
-$$H_{A}: \mu_{nostorms} - \mu_{storms} \neq 0$$
-
+$$H_{0}: \mu_{nostorms} - \mu_{storms} = 0$$ $$H_{A}: \mu_{nostorms} - \mu_{storms} \neq 0$$
 
 ```{r}
 mu_nostorms <- hgdp %>% 
@@ -233,7 +216,7 @@ mu_storms <- hgdp %>%
 point_est = as.numeric(mu_nostorms - mu_storms)
 ```
 
-The difference between annual GDP growth for years without a storm versus years with a storm is `r point_est`. 
+The difference between annual GDP growth for years without a storm versus years with a storm is `r point_est`.
 
 ```{r}
 n1 = hgdp %>% filter(storm == "no") %>% count()
@@ -241,29 +224,26 @@ n2 = hgdp %>% filter(storm == "yes") %>% count()
 s1 = hgdp %>% filter(storm == "no") %>% summarize(sd(gdp_growth, na.rm = TRUE))
 s2 = hgdp %>% filter(storm == "yes") %>% summarize(sd(gdp_growth, na.rm = TRUE))
 SE = as.numeric(sqrt(s1^2/n1 + s2^2/n2))
-print(SE)
 
 zscore = (point_est - 0)/SE
-print(zscore)
 
 p_val = 2 * pnorm(point_est, mean = 0, sd = SE, lower.tail=FALSE)
-print(p_val)
 ```
 
-Since the p-value is greater than the 0.05, we fail to reject the null hypothesis that there is no difference between annual GDP Growth for years where there is a storm versus a year without. From this sample, we cannot say with certainty that there is a statistical difference at the 5% significance level between GDP growth in years without a hurricanes and years with one. 
+Since the p-value is `r round(p_val,2)` and is greater than 0.05, we fail to reject the null hypothesis that there is no difference between annual GDP Growth for years where there is a storm versus a year without. From this sample, we cannot say with certainty that there is a statistical difference at the 5% significance level between GDP growth in years without a hurricanes and years with one.
 
-These results are not very helpful in answering the question of impact of hurricanes on the GDP Growth in The Bahamas. 
+These results are not very helpful in answering the question of impact of hurricanes on the GDP Growth in The Bahamas.
 
 #### Test 2
 
-Because I failed to reject my null, I was thinking about further analysis and decided to look at whether or not there was a lagged affect due to the impact of hurricanes. Because the hurricane season is from June 1st to November 30th, if there is a late season hurricane that devastates The Bahamas, it is possible that the affect will not be seen on GDP until following years. My new hypothesis test evaluates whether there is a difference in GDP growth for years where there were hurricanes versus years with hurricanes two years before.
+Because I failed to reject my null, I thought about further analysis and decided to look at whether or not there was a lagged affect due to the impact of hurricanes. Because the hurricane season is from June 1st to November 30th, if there is a late season hurricane that impacts The Bahamas, it is possible that the affect will not be seen on GDP until following years. My new hypothesis test evaluates whether there is a difference in GDP growth for years where there were hurricanes versus years with hurricanes two years before.
 
 ```{r}
 hgdp_lag <- hgdp %>% 
   mutate(storm_lag = lag(storm, n = 2, default = NA))
 ```
 
-My new null hypothesis is $$H_{0}: \mu_{nostorms} - \mu_{storms} = 0$$ where storms and no storms now represent the value from two year prior. The new alternative hypothesis is $$H_{A}: \mu_{nostorms} - \mu_{storms} \neq 0$$.
+My new null hypothesis is $$H_{0}: \mu_{nostorms} - \mu_{storms} = 0$$ where storms and no storms now represent the value from two years prior. The new alternative hypothesis is $$H_{A}: \mu_{nostorms} - \mu_{storms} \neq 0$$.
 
 ```{r}
 mu_nostorms <- hgdp_lag %>% 
@@ -277,7 +257,7 @@ mu_storms <- hgdp_lag %>%
 point_est = as.numeric(mu_nostorms - mu_storms)
 ```
 
-The difference between annual GDP growth for years without a storm the previous year versus years with a storm the year prior is `r point_est`. 
+The difference between annual GDP growth for years without a storm the previous year versus years with a storm the year prior is `r point_est`.
 
 ```{r}
 n1 = hgdp_lag %>% filter(storm_lag == "no") %>% count()
@@ -285,42 +265,44 @@ n2 = hgdp_lag %>% filter(storm_lag == "yes") %>% count()
 s1 = hgdp_lag %>% filter(storm_lag == "no") %>% summarize(sd(gdp_growth, na.rm = TRUE))
 s2 = hgdp_lag %>% filter(storm_lag == "yes") %>% summarize(sd(gdp_growth, na.rm = TRUE))
 SE = as.numeric(sqrt(s1^2/n1 + s2^2/n2))
-print(SE)
 
 zscore = (point_est - 0)/SE
-print(zscore)
 
 p_val = 2 * pnorm(point_est, mean = 0, sd = SE, lower.tail=FALSE)
-print(p_val)
 ```
 
-With the new p-value with the lagged effect being `r round(p_val, 4)` < 0.05, we can now reject the null that there is no difference in GDP growth for years with there was a storm 2 years prior versus years there was not. We can now say there is a statistical difference at the 95% confidence level in annual GDP growth percentage between years where the was a hurricane two years prior versus those with none. 
+With the new p-value with the lagged effect being `r round(p_val, 4)` \< 0.05, we can now reject the null that there is no difference in GDP growth for years with there was a storm 2 years prior versus years there was not. We can now say there is a statistical difference at the 95% confidence level in annual GDP growth percentage between years where the was a hurricane two years prior versus those with none.
 
-Because we were able to reject the null hypothesis here, I will now contruct a confidence interval for the p-value. 
+Because we were able to reject the null hypothesis here, I will now contruct a confidence interval for the p-value.
 
 ```{r}
 crit_val = qnorm(0.025, lower.tail=FALSE)
-```
 
-Now we can construct the 95% confidence interval:
-
-```{r}
 ci_lower = round(point_est - crit_val*SE, 2)
 ci_upper = round(point_est + crit_val*SE, 2)
 
-print(paste0("There is a 95% probability that [", ci_lower, ", ", ci_upper, "] contains the difference in annual GDP growth for years where there was a hurricane two years prior versus years where there was not."))
 ```
 
-```{r}
-t.test(gdp_growth ~ storm_lag, data = hgdp_lag, conf.level = 0.90)
-```
+There is a 95% probability that [`r ci_lower`, `r ci_upper`] contained the difference in annual GDP growth for years where there was a hurricane two years prior versus years where there was not.
 
 # Next Steps
 
-**What might you do next?** *One short analysis cannot fully answer an interesting scientific 
-question. If you had time to collect more data or conduct more analysis, what would help 
-you answer this question better?*
+**What might you do next?** *One short analysis cannot fully answer an interesting scientific question. If you had time to collect more data or conduct more analysis, what would help you answer this question better?*
 
-- lag effect 
-- removal of 2020 from the data to take out the impact of covid 
-- number of islands impacted 
+If I had more time to conduct further analysis, I would look at other contributing factors to GDP growth in The Bahamas and try to identify some of the possible omitted variable bias. Additionally, I would look at the link between population impacted and the annual percentage of GDP growth. Because The Bahamas is an archipelago of 17 major inhabited islands, often times hurricanes will only impact a selection of them depending on its path. Larger islands have more infrastructure and thus the damages can be more costly. Looking at the number of islands and the population impacted by a hurricanes might lead to a more definitive answer about the impact of hurricanes on the annual percentage of GDP growth.
+
+In this further analysis, I can also look at the cost of damages of each storm and compare that to the annual percentage of GDP growth. This would be another good metric for determining the impact of storms.
+
+Finally, I would examine how to separate the impact of Covid-19 on annual percentage of GDP growth. I considered removing 2020 from the datasets because there was a very large decrease in percentage GDP growth and that was the Covid-19 year. However in 2019, The Bahamas was hit with the worst hurricane on record. Dorian destroyed two islands and, according to the Inter American Development Bank, resulted in 3.4 billion dollars in damages, over 25% of The Bahamas' GDP (Inter American Development Bank, 2019). As shown in my second hypothesis test, there is an lag effect in the impact on GDP. Removing the years following the impact of Hurricane Dorian would cause inaccuracies in the study. For further analysis, I would look at
+
+# References
+
+Inter American Development Bank. (2019, November 15). Damages and other impacts on Bahamas by Hurricane Dorian estimated at \$3.4 billion: Report \| IADB. <https://www.iadb.org/en/news/damages-and-other-impacts-bahamas-hurricane-dorian-estimated-34-billion-report>
+
+National Hurricane Center. (2021a). NHC Data Archive. <https://www.nhc.noaa.gov/data/>
+
+National Hurricane Center. (2021b, May). Saffir-Simpson Hurricane Wind Scale. <https://www.nhc.noaa.gov/aboutsshws.php>
+
+Ötker, İ., & Srinivasan, K. (2018). For the Caribbean, building resilience is a matter of survival. Finance and Development, 55(1), 4.
+
+World Bank. (2021). GDP growth (annual %)---Bahamas, The | Data. <https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=BS>

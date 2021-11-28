@@ -2434,14 +2434,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 }</style>
 <!--/radix_placeholder_distill-->
   <script src="../../site_libs/header-attrs-2.11/header-attrs.js"></script>
-  <script src="../../site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-  <script src="../../site_libs/plotly-binding-4.10.0/plotly.js"></script>
-  <script src="../../site_libs/typedarray-0.1/typedarray.min.js"></script>
   <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="../../site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
-  <script src="../../site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
-  <link href="../../site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
-  <script src="../../site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2536,6 +2529,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 </ul></li>
 </ul></li>
 <li><a href="#next-steps">Next Steps</a></li>
+<li><a href="#references">References</a></li>
 </ul>
 </nav>
 </div>
@@ -2547,10 +2541,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <p><strong>Describe your data</strong> <em>Where did you access it? What are its spatial and temporal features? What are its limitations? What do you know about the sampling strategy and what biases that may introduce? If helpful, you can use a histogram, scatterplot, or summary statistics table to describe your data</em></p>
 <p>For the analysis of this research question, data from the National Hurricane Center and The World Bank are being used.</p>
 <h2 id="gdp-growth-data">GDP Growth Data</h2>
-<p>The data for annual percentage of GDP Growth was collected from The World Bank Data Repository. This data covers annual percentage of GDP growth from 1961 to present for The Bahamas. The metadata containing information about calculations and sampling strategy can be found <a href="https://databank.worldbank.org/reports.aspx?source=2&amp;type=metadata&amp;series=NY.GDP.MKTP.KD.ZG">here</a>.</p>
-<ul>
-<li>World Bank. (2021). GDP growth (annual %)—Bahamas, The | Data. <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=BS" class="uri">https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=BS</a></li>
-</ul>
+<p>The data for annual percentage of GDP Growth was collected from The World Bank Data Repository (World Bank, 2021). This data covers annual percentage of GDP growth from 1961 to present for The Bahamas. The metadata containing information about calculations and sampling strategy can be found <a href="https://databank.worldbank.org/reports.aspx?source=2&amp;type=metadata&amp;series=NY.GDP.MKTP.KD.ZG">here</a>.</p>
 <h3 id="data-io-and-tidying">Data I/O and Tidying</h3>
 <div class="layout-chunk" data-layout="l-body">
 <details>
@@ -2591,8 +2582,8 @@ Show code
 <p><img src="hurricanes-and-gdp-growth-in-the-bahamas_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
 </div>
 <h2 id="hurricane-data">Hurricane Data</h2>
-<p>The data on hurricanes in The Bahamas was collected from the National Hurricane Center’s Data Archive (National Hurricane Center, 2021). This dataset did not exist in csv format, so I looked through the yearly reports from 1960 to present and recorded all of the storms that impacted The Bahamas. I made note of the year each storm occurred, the name of the storm, the intensity and the number of islands in The Bahamas that were impacted by each storm.</p>
-<p>In creation of this dataset, I recorded storm intensity from 1 to 6, with 1 being Tropical Storms and 6 being a category 5 hurricane. The Saffir-Simpson Wind Scale considers a tropical storm anything with winds below 74mph (National Hurricane Center, 2021), but I know that these storm can still have damaging impacts on countries so I wanted to ensure they were included in the data to be analyzed for this question.</p>
+<p>The data on hurricanes in The Bahamas was collected from the National Hurricane Center’s Data Archive (National Hurricane Center, 2021a). This dataset did not exist in csv format, so I looked through the yearly reports from 1960 to present and recorded all of the storms that impacted The Bahamas. I made note of the year each storm occurred, the name of the storm, the intensity and the number of islands in The Bahamas that were impacted by each storm.</p>
+<p>In creation of this dataset, I recorded storm intensity from 1 to 6, with 1 being Tropical Storms and 6 being a category 5 hurricane. The Saffir-Simpson Wind Scale considers a tropical storm anything with winds below 74mph (National Hurricane Center, 2021b), but I know that these storms can still have damaging impacts on countries so I wanted to ensure they were included in the data to be analyzed for this question.</p>
 <h3 id="data-io-tidying-and-visualization">Data I/O, Tidying and Visualization</h3>
 <div class="layout-chunk" data-layout="l-body">
 <details>
@@ -3251,9 +3242,8 @@ Show code
 <p><strong>Clearly describe your analysis plan</strong> <em>What is your analysis plan? Why did you choose this analysis, given your data and question? What are the limitations?</em></p>
 <p>For this analysis I’m going to first look at a linear regression of the impact of yearly number hurricanes and their average strength on annual percentage of GDP growth. I will then perform hypothesis testing to evaluate if there is a difference in GDP growth between years with hurricanes versus years without.</p>
 <p>I decided to use multiple linear regression to evaluate the relation between hurricanes and annual percentage of GDP growth because I wanted to avoid one omitted variable that can lead to bias. The stronger a hurricane, the more damage it inflicts on a location so I did not just want to look at the number of hurricanes in a given year but also how strong they are.</p>
-<p>I decided to to use hypothesis testing to evaluate whether there was a difference in years with and without hurricanes and this further allows me to analyze the lag effect of hurricanes on annual percentage of GDP growth in The Bahamas by comparing the p-value at year 0 and then at two years later.</p>
-<p>The biggest limitation in answering my research question is the known fact that more that the impact of hurricanes affect the annual GDP growth of The Bahamas so there is a likely chance that my results will be inconclusive because of omitted variables in GDP growth.</p>
-<p><strong>edit why I chose this analysis and what the limitations are</strong></p>
+<p>Hypothesis testing will be used to evaluate whether there was a difference in years with and without hurricanes. Further, I will investigate if there is a lag effect of hurricanes on annual percentage of GDP growth in The Bahamas by comparing the p-value for a year with a hurricane and then at years where there was a hurricane two years prior.</p>
+<p>The biggest limitation in answering my research question is the known fact that more than the impact of hurricanes affect the annual GDP growth of The Bahamas so there is a likely chance that my results will be inconclusive because of omitted variables in GDP growth.</p>
 <h2 id="results">Results</h2>
 <p><strong>Summarize your results visually and in words</strong> <em>Show us your results in figure(s) and/or table(s) that are carefully labeled and captioned. Describe in the text what you found, and how these results either do or do not help you answer your question.</em></p>
 <h3 id="linear-regression-summary">Linear Regression Summary</h3>
@@ -3398,23 +3388,6 @@ Show code
 <p><img src="hurricanes-and-gdp-growth-in-the-bahamas_files/figure-html5/unnamed-chunk-7-1.png" width="624" /></p>
 </div>
 <p>There is a slight positive correlation seen between annual percent GDP growth and the average strength of storms. This positive correlation highlights that there are likely many omitted variables in the data as well as the possibility of a lagged effect.</p>
-<p>We can visualize the relationship between all three variables in a hyperplane.</p>
-<div class="layout-chunk" data-layout="l-body">
-<details>
-<summary>
-Show code
-</summary>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/plotly/man/plot_ly.html'>plot_ly</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>hgdp</span>, z <span class='op'>=</span> <span class='op'>~</span><span class='va'>gdp_growth</span>, x <span class='op'>=</span> <span class='op'>~</span><span class='va'>number</span>, y <span class='op'>=</span> <span class='op'>~</span><span class='va'>avg_strength</span>, color <span class='op'>=</span> <span class='va'>gdp_growth</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://rdrr.io/pkg/plotly/man/layout.html'>layout</a></span><span class='op'>(</span>scene <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>xaxis <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Number of Storms"</span><span class='op'>)</span>, 
-                      yaxis <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Average Strength of Storms"</span><span class='op'>)</span>, 
-                      zaxis <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Annual % GDP Growth"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
-</code></pre>
-</div>
-</details>
-<div id="htmlwidget-320f20320f22b628baab" style="width:624px;height:384px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-320f20320f22b628baab">{"x":{"visdat":{"2dd77e3f4309":["function () ","plotlyVisDat"]},"cur_data":"2dd77e3f4309","attrs":{"2dd77e3f4309":{"z":{},"x":{},"y":{},"color":[{"country_name":"Bahamas, The","year":1960,"gdp_growth":null},{"country_name":"Bahamas, The","year":1961,"gdp_growth":10.66709743},{"country_name":"Bahamas, The","year":1962,"gdp_growth":10.45197189},{"country_name":"Bahamas, The","year":1963,"gdp_growth":10.5240552},{"country_name":"Bahamas, The","year":1964,"gdp_growth":10.5015672},{"country_name":"Bahamas, The","year":1965,"gdp_growth":10.42559649},{"country_name":"Bahamas, The","year":1966,"gdp_growth":9.071928711},{"country_name":"Bahamas, The","year":1967,"gdp_growth":9.598113867},{"country_name":"Bahamas, The","year":1968,"gdp_growth":8.421763564},{"country_name":"Bahamas, The","year":1969,"gdp_growth":8.981662578},{"country_name":"Bahamas, The","year":1970,"gdp_growth":-5.649649519},{"country_name":"Bahamas, The","year":1971,"gdp_growth":1.626508741},{"country_name":"Bahamas, The","year":1972,"gdp_growth":-3.497335933},{"country_name":"Bahamas, The","year":1973,"gdp_growth":7.567568824},{"country_name":"Bahamas, The","year":1974,"gdp_growth":-16.75422907},{"country_name":"Bahamas, The","year":1975,"gdp_growth":-14.80312631},{"country_name":"Bahamas, The","year":1976,"gdp_growth":5.185184972},{"country_name":"Bahamas, The","year":1977,"gdp_growth":9.154929219},{"country_name":"Bahamas, The","year":1978,"gdp_growth":14.17952014},{"country_name":"Bahamas, The","year":1979,"gdp_growth":26.13929577},{"country_name":"Bahamas, The","year":1980,"gdp_growth":6.495281921},{"country_name":"Bahamas, The","year":1981,"gdp_growth":-9.22640508},{"country_name":"Bahamas, The","year":1982,"gdp_growth":6.698897756},{"country_name":"Bahamas, The","year":1983,"gdp_growth":3.597051868},{"country_name":"Bahamas, The","year":1984,"gdp_growth":14.17114862},{"country_name":"Bahamas, The","year":1985,"gdp_growth":4.829180114},{"country_name":"Bahamas, The","year":1986,"gdp_growth":1.797000227},{"country_name":"Bahamas, The","year":1987,"gdp_growth":2.984519345},{"country_name":"Bahamas, The","year":1988,"gdp_growth":2.309707661},{"country_name":"Bahamas, The","year":1989,"gdp_growth":6.727329799},{"country_name":"Bahamas, The","year":1990,"gdp_growth":-1.596249086},{"country_name":"Bahamas, The","year":1991,"gdp_growth":-4.181784781},{"country_name":"Bahamas, The","year":1992,"gdp_growth":-3.82558197},{"country_name":"Bahamas, The","year":1993,"gdp_growth":0.307806291},{"country_name":"Bahamas, The","year":1994,"gdp_growth":3.14891562},{"country_name":"Bahamas, The","year":1995,"gdp_growth":4.37875209},{"country_name":"Bahamas, The","year":1996,"gdp_growth":4.223530425},{"country_name":"Bahamas, The","year":1997,"gdp_growth":6.87573942},{"country_name":"Bahamas, The","year":1998,"gdp_growth":-4.503596622},{"country_name":"Bahamas, The","year":1999,"gdp_growth":12.19751829},{"country_name":"Bahamas, The","year":2000,"gdp_growth":4.149234046},{"country_name":"Bahamas, The","year":2001,"gdp_growth":2.625159596},{"country_name":"Bahamas, The","year":2002,"gdp_growth":2.704670969},{"country_name":"Bahamas, The","year":2003,"gdp_growth":-1.264526295},{"country_name":"Bahamas, The","year":2004,"gdp_growth":0.882740185},{"country_name":"Bahamas, The","year":2005,"gdp_growth":3.395260082},{"country_name":"Bahamas, The","year":2006,"gdp_growth":2.516853933},{"country_name":"Bahamas, The","year":2007,"gdp_growth":1.446733889},{"country_name":"Bahamas, The","year":2008,"gdp_growth":-2.323507236},{"country_name":"Bahamas, The","year":2009,"gdp_growth":-4.175805556},{"country_name":"Bahamas, The","year":2010,"gdp_growth":1.538385972},{"country_name":"Bahamas, The","year":2011,"gdp_growth":0.613384158},{"country_name":"Bahamas, The","year":2012,"gdp_growth":3.08668686},{"country_name":"Bahamas, The","year":2013,"gdp_growth":-2.678979525},{"country_name":"Bahamas, The","year":2014,"gdp_growth":1.054316467},{"country_name":"Bahamas, The","year":2015,"gdp_growth":0.230478124},{"country_name":"Bahamas, The","year":2016,"gdp_growth":1.444036489},{"country_name":"Bahamas, The","year":2017,"gdp_growth":3.115613515},{"country_name":"Bahamas, The","year":2018,"gdp_growth":3.025999168},{"country_name":"Bahamas, The","year":2019,"gdp_growth":1.217873857},{"country_name":"Bahamas, The","year":2020,"gdp_growth":-16.27773826}],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":"Number of Storms"},"yaxis":{"title":"Average Strength of Storms"},"zaxis":{"title":"Annual % GDP Growth"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"z":[10.66709743,10.5240552,10.42559649,9.071928711,-5.649649519,-3.497335933,7.567568824,26.13929577,-9.22640508,14.17114862,4.829180114,2.984519345,2.309707661,-4.181784781,-3.82558197,4.37875209,4.223530425,-4.503596622,12.19751829,2.625159596,2.704670969,-1.264526295,0.882740185,3.395260082,2.516853933,1.446733889,-2.323507236,1.538385972,0.613384158,3.08668686,-2.678979525,1.054316467,0.230478124,1.444036489,3.115613515,3.025999168,1.217873857,-16.27773826],"x":[1,1,1,2,1,1,1,1,3,1,2,1,1,2,1,1,2,1,4,1,1,4,2,6,1,1,3,2,3,2,1,2,2,3,3,2,2,4],"y":[1,3,5,3.5,1,1,1,3,1.66666666666667,1,2,1,1,1,6,3,3.5,5,2.75,5,1,2.5,4,1.83333333333333,1,2,3.66666666666667,1,2,3,1,1.5,3.5,2.66666666666667,4,1.5,5,1.5],"type":"scatter3d","mode":"markers","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-</div>
 <h3 id="hypothesis-testing">Hypothesis Testing</h3>
 <h4 id="test-1">Test 1</h4>
 <p>I will construct a null and alternative hypothesis that will allow me to evaluate if there is a difference in annual GDP growth for years without storms vs years with storms.</p>
@@ -3450,38 +3423,18 @@ Show code
 <span class='va'>s1</span> <span class='op'>=</span> <span class='va'>hgdp</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm</span> <span class='op'>==</span> <span class='st'>"no"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>summarize</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>gdp_growth</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
 <span class='va'>s2</span> <span class='op'>=</span> <span class='va'>hgdp</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm</span> <span class='op'>==</span> <span class='st'>"yes"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>summarize</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>gdp_growth</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
 <span class='va'>SE</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='op'>(</span><span class='va'>s1</span><span class='op'>^</span><span class='fl'>2</span><span class='op'>/</span><span class='va'>n1</span> <span class='op'>+</span> <span class='va'>s2</span><span class='op'>^</span><span class='fl'>2</span><span class='op'>/</span><span class='va'>n2</span><span class='op'>)</span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>SE</span><span class='op'>)</span>
+
+<span class='va'>zscore</span> <span class='op'>=</span> <span class='op'>(</span><span class='va'>point_est</span> <span class='op'>-</span> <span class='fl'>0</span><span class='op'>)</span><span class='op'>/</span><span class='va'>SE</span>
+
+<span class='va'>p_val</span> <span class='op'>=</span> <span class='fl'>2</span> <span class='op'>*</span> <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>pnorm</a></span><span class='op'>(</span><span class='va'>point_est</span>, mean <span class='op'>=</span> <span class='fl'>0</span>, sd <span class='op'>=</span> <span class='va'>SE</span>, lower.tail<span class='op'>=</span><span class='cn'>FALSE</span><span class='op'>)</span>
 </code></pre>
 </div>
 </details>
-<pre><code>[1] 1.99641</code></pre>
-<details>
-<summary>
-Show code
-</summary>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>zscore</span> <span class='op'>=</span> <span class='op'>(</span><span class='va'>point_est</span> <span class='op'>-</span> <span class='fl'>0</span><span class='op'>)</span><span class='op'>/</span><span class='va'>SE</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>zscore</span><span class='op'>)</span>
-</code></pre>
 </div>
-</details>
-<pre><code>[1] 0.5827009</code></pre>
-<details>
-<summary>
-Show code
-</summary>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>p_val</span> <span class='op'>=</span> <span class='fl'>2</span> <span class='op'>*</span> <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>pnorm</a></span><span class='op'>(</span><span class='va'>point_est</span>, mean <span class='op'>=</span> <span class='fl'>0</span>, sd <span class='op'>=</span> <span class='va'>SE</span>, lower.tail<span class='op'>=</span><span class='cn'>FALSE</span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>p_val</span><span class='op'>)</span>
-</code></pre>
-</div>
-</details>
-<pre><code>[1] 0.5600947</code></pre>
-</div>
-<p>Since the p-value is greater than the 0.05, we fail to reject the null hypothesis that there is no difference between annual GDP Growth for years where there is a storm versus a year without. From this sample, we cannot say with certainty that there is a statistical difference at the 5% significance level between GDP growth in years without a hurricanes and years with one.</p>
+<p>Since the p-value is 0.56 and is greater than 0.05, we fail to reject the null hypothesis that there is no difference between annual GDP Growth for years where there is a storm versus a year without. From this sample, we cannot say with certainty that there is a statistical difference at the 5% significance level between GDP growth in years without a hurricanes and years with one.</p>
 <p>These results are not very helpful in answering the question of impact of hurricanes on the GDP Growth in The Bahamas.</p>
 <h4 id="test-2">Test 2</h4>
-<p>Because I failed to reject my null, I was thinking about further analysis and decided to look at whether or not there was a lagged affect due to the impact of hurricanes. Because the hurricane season is from June 1st to November 30th, if there is a late season hurricane that devastates The Bahamas, it is possible that the affect will not be seen on GDP until following years. My new hypothesis test evaluates whether there is a difference in GDP growth for years where there were hurricanes versus years with hurricanes two years before.</p>
+<p>Because I failed to reject my null, I thought about further analysis and decided to look at whether or not there was a lagged affect due to the impact of hurricanes. Because the hurricane season is from June 1st to November 30th, if there is a late season hurricane that impacts The Bahamas, it is possible that the affect will not be seen on GDP until following years. My new hypothesis test evaluates whether there is a difference in GDP growth for years where there were hurricanes versus years with hurricanes two years before.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -3494,7 +3447,7 @@ Show code
 </div>
 </details>
 </div>
-<p>My new null hypothesis is <span class="math display">\[H_{0}: \mu_{nostorms} - \mu_{storms} = 0\]</span> where storms and no storms now represent the value from two year prior. The new alternative hypothesis is <span class="math display">\[H_{A}: \mu_{nostorms} - \mu_{storms} \neq 0\]</span>.</p>
+<p>My new null hypothesis is <span class="math display">\[H_{0}: \mu_{nostorms} - \mu_{storms} = 0\]</span> where storms and no storms now represent the value from two years prior. The new alternative hypothesis is <span class="math display">\[H_{A}: \mu_{nostorms} - \mu_{storms} \neq 0\]</span>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -3526,33 +3479,13 @@ Show code
 <span class='va'>s1</span> <span class='op'>=</span> <span class='va'>hgdp_lag</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm_lag</span> <span class='op'>==</span> <span class='st'>"no"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>summarize</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>gdp_growth</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
 <span class='va'>s2</span> <span class='op'>=</span> <span class='va'>hgdp_lag</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm_lag</span> <span class='op'>==</span> <span class='st'>"yes"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>summarize</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>gdp_growth</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
 <span class='va'>SE</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='op'>(</span><span class='va'>s1</span><span class='op'>^</span><span class='fl'>2</span><span class='op'>/</span><span class='va'>n1</span> <span class='op'>+</span> <span class='va'>s2</span><span class='op'>^</span><span class='fl'>2</span><span class='op'>/</span><span class='va'>n2</span><span class='op'>)</span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>SE</span><span class='op'>)</span>
+
+<span class='va'>zscore</span> <span class='op'>=</span> <span class='op'>(</span><span class='va'>point_est</span> <span class='op'>-</span> <span class='fl'>0</span><span class='op'>)</span><span class='op'>/</span><span class='va'>SE</span>
+
+<span class='va'>p_val</span> <span class='op'>=</span> <span class='fl'>2</span> <span class='op'>*</span> <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>pnorm</a></span><span class='op'>(</span><span class='va'>point_est</span>, mean <span class='op'>=</span> <span class='fl'>0</span>, sd <span class='op'>=</span> <span class='va'>SE</span>, lower.tail<span class='op'>=</span><span class='cn'>FALSE</span><span class='op'>)</span>
 </code></pre>
 </div>
 </details>
-<pre><code>[1] 1.857529</code></pre>
-<details>
-<summary>
-Show code
-</summary>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>zscore</span> <span class='op'>=</span> <span class='op'>(</span><span class='va'>point_est</span> <span class='op'>-</span> <span class='fl'>0</span><span class='op'>)</span><span class='op'>/</span><span class='va'>SE</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>zscore</span><span class='op'>)</span>
-</code></pre>
-</div>
-</details>
-<pre><code>[1] 3.106828</code></pre>
-<details>
-<summary>
-Show code
-</summary>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>p_val</span> <span class='op'>=</span> <span class='fl'>2</span> <span class='op'>*</span> <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>pnorm</a></span><span class='op'>(</span><span class='va'>point_est</span>, mean <span class='op'>=</span> <span class='fl'>0</span>, sd <span class='op'>=</span> <span class='va'>SE</span>, lower.tail<span class='op'>=</span><span class='cn'>FALSE</span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>p_val</span><span class='op'>)</span>
-</code></pre>
-</div>
-</details>
-<pre><code>[1] 0.001891066</code></pre>
 </div>
 <p>With the new p-value with the lagged effect being 0.0019 &lt; 0.05, we can now reject the null that there is no difference in GDP growth for years with there was a storm 2 years prior versus years there was not. We can now say there is a statistical difference at the 95% confidence level in annual GDP growth percentage between years where the was a hurricane two years prior versus those with none.</p>
 <p>Because we were able to reject the null hypothesis here, I will now contruct a confidence interval for the p-value.</p>
@@ -3563,56 +3496,26 @@ Show code
 </summary>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>crit_val</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>qnorm</a></span><span class='op'>(</span><span class='fl'>0.025</span>, lower.tail<span class='op'>=</span><span class='cn'>FALSE</span><span class='op'>)</span>
-</code></pre>
-</div>
-</details>
-</div>
-<p>Now we can construct the 95% confidence interval:</p>
-<div class="layout-chunk" data-layout="l-body">
-<details>
-<summary>
-Show code
-</summary>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ci_lower</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>point_est</span> <span class='op'>-</span> <span class='va'>crit_val</span><span class='op'>*</span><span class='va'>SE</span>, <span class='fl'>2</span><span class='op'>)</span>
+
+<span class='va'>ci_lower</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>point_est</span> <span class='op'>-</span> <span class='va'>crit_val</span><span class='op'>*</span><span class='va'>SE</span>, <span class='fl'>2</span><span class='op'>)</span>
 <span class='va'>ci_upper</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>point_est</span> <span class='op'>+</span> <span class='va'>crit_val</span><span class='op'>*</span><span class='va'>SE</span>, <span class='fl'>2</span><span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"There is a 95% probability that ["</span>, <span class='va'>ci_lower</span>, <span class='st'>", "</span>, <span class='va'>ci_upper</span>, <span class='st'>"] contains the difference in annual GDP growth for years where there was a hurricane two years prior versus years where there was not."</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </details>
-<pre><code>[1] &quot;There is a 95% probability that [2.13, 9.41] contains the difference in annual GDP growth for years where there was a hurricane two years prior versus years where there was not.&quot;</code></pre>
 </div>
-<div class="layout-chunk" data-layout="l-body">
-<details>
-<summary>
-Show code
-</summary>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/stats/t.test.html'>t.test</a></span><span class='op'>(</span><span class='va'>gdp_growth</span> <span class='op'>~</span> <span class='va'>storm_lag</span>, data <span class='op'>=</span> <span class='va'>hgdp_lag</span>, conf.level <span class='op'>=</span> <span class='fl'>0.90</span><span class='op'>)</span>
-</code></pre>
-</div>
-</details>
-<pre><code>
-    Welch Two Sample t-test
-
-data:  gdp_growth by storm_lag
-t = 3.1068, df = 41.947, p-value = 0.003387
-alternative hypothesis: true difference in means between group no and group yes is not equal to 0
-90 percent confidence interval:
- 2.646659 8.895385
-sample estimates:
- mean in group no mean in group yes 
-        6.2442374         0.4732157 </code></pre>
-</div>
+<p>There is a 95% probability that [2.13, 9.41] contained the difference in annual GDP growth for years where there was a hurricane two years prior versus years where there was not.</p>
 <h1 id="next-steps">Next Steps</h1>
 <p><strong>What might you do next?</strong> <em>One short analysis cannot fully answer an interesting scientific question. If you had time to collect more data or conduct more analysis, what would help you answer this question better?</em></p>
-<ul>
-<li>lag effect</li>
-<li>removal of 2020 from the data to take out the impact of covid</li>
-<li>number of islands impacted</li>
-</ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>If I had more time to conduct further analysis, I would look at other contributing factors to GDP growth in The Bahamas and try to identify some of the possible omitted variable bias. Additionally, I would look at the link between population impacted and the annual percentage of GDP growth. Because The Bahamas is an archipelago of 17 major inhabited islands, often times hurricanes will only impact a selection of them depending on its path. Larger islands have more infrastructure and thus the damages can be more costly. Looking at the number of islands and the population impacted by a hurricanes might lead to a more definitive answer about the impact of hurricanes on the annual percentage of GDP growth.</p>
+<p>In this further analysis, I can also look at the cost of damages of each storm and compare that to the annual percentage of GDP growth. This would be another good metric for determining the impact of storms.</p>
+<p>Finally, I would examine how to separate the impact of Covid-19 on annual percentage of GDP growth. I considered removing 2020 from the datasets because there was a very large decrease in percentage GDP growth and that was the Covid-19 year. However in 2019, The Bahamas was hit with the worst hurricane on record. Dorian destroyed two islands and, according to the Inter American Development Bank, resulted in 3.4 billion dollars in damages, over 25% of The Bahamas’ GDP (Inter American Development Bank, 2019). As shown in my second hypothesis test, there is an lag effect in the impact on GDP. Removing the years following the impact of Hurricane Dorian would cause inaccuracies in the study. For further analysis, I would look at</p>
+<h1 id="references">References</h1>
+<p>Inter American Development Bank. (2019, November 15). Damages and other impacts on Bahamas by Hurricane Dorian estimated at $3.4 billion: Report | IADB. <a href="https://www.iadb.org/en/news/damages-and-other-impacts-bahamas-hurricane-dorian-estimated-34-billion-report" class="uri">https://www.iadb.org/en/news/damages-and-other-impacts-bahamas-hurricane-dorian-estimated-34-billion-report</a></p>
+<p>National Hurricane Center. (2021a). NHC Data Archive. <a href="https://www.nhc.noaa.gov/data/" class="uri">https://www.nhc.noaa.gov/data/</a></p>
+<p>National Hurricane Center. (2021b, May). Saffir-Simpson Hurricane Wind Scale. <a href="https://www.nhc.noaa.gov/aboutsshws.php" class="uri">https://www.nhc.noaa.gov/aboutsshws.php</a></p>
+<p>Ötker, İ., &amp; Srinivasan, K. (2018). For the Caribbean, building resilience is a matter of survival. Finance and Development, 55(1), 4.</p>
+<p>World Bank. (2021). GDP growth (annual %)—Bahamas, The | Data. <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=BS" class="uri">https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=BS</a></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
