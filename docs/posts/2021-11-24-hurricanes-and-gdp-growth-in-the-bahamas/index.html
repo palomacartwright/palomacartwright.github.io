@@ -104,8 +104,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="og:description" content="EDS 222 Final Project: Exploring the statistical relationship between Hurricanes and the Annual Percentage of   GDP Growth in The Bahamas."/>
 <meta property="og:url" content="palomacartwright.github.io/posts/2021-11-24-hurricanes-and-gdp-growth-in-the-bahamas/"/>
 <meta property="og:image" content="palomacartwright.github.io/posts/2021-11-24-hurricanes-and-gdp-growth-in-the-bahamas/hurricanes-and-gdp-growth-in-the-bahamas_files/figure-html5/unnamed-chunk-2-1.png"/>
-<meta property="og:image:width" content="1248"/>
-<meta property="og:image:height" content="768"/>
+<meta property="og:image:width" content="960"/>
+<meta property="og:image:height" content="384"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Paloma Cartwright"/>
 
@@ -115,8 +115,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="twitter:description" content="EDS 222 Final Project: Exploring the statistical relationship between Hurricanes and the Annual Percentage of   GDP Growth in The Bahamas."/>
 <meta property="twitter:url" content="palomacartwright.github.io/posts/2021-11-24-hurricanes-and-gdp-growth-in-the-bahamas/"/>
 <meta property="twitter:image" content="palomacartwright.github.io/posts/2021-11-24-hurricanes-and-gdp-growth-in-the-bahamas/hurricanes-and-gdp-growth-in-the-bahamas_files/figure-html5/unnamed-chunk-2-1.png"/>
-<meta property="twitter:image:width" content="1248"/>
-<meta property="twitter:image:height" content="768"/>
+<meta property="twitter:image:width" content="960"/>
+<meta property="twitter:image:height" content="384"/>
 
 <!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
 <meta name="citation_title" content="Paloma Cartwright: Hurricanes and GDP Growth in The Bahamas"/>
@@ -2534,11 +2534,9 @@ d-appendix d-footnote-list a.footnote-backlink {
 </nav>
 </div>
 <h1 id="research-question">Research Question</h1>
-<p><strong>Motivate your question</strong> <em>Why is this important? Is there existing evidence on this question? If so, why is it inconclusive? If not, why not?</em></p>
 <p>The aim of this project is to investigate the impact of hurricanes on the annual percentage of GDP growth in The Bahamas. Growing up in The Bahamas, I have witnessed first hand the devastating impacts of hurricanes on livelihoods throughout the country and have been an active participant in recovery efforts every time my island was struck. Natural disasters have massive economic and human costs and take a deep toll on growth prospects because reconstruction costs monopolize already scarce resources for health, education, and social spending, especially in developing countries (Ötker &amp; Srinivasan, 2018).</p>
 <p>There is existing research on the impact of hurricanes on GDP growth in the United States but this project will look specifically at The Bahamas. With the global changing climate and the continual impact of stronger hurricanes on Caribbean countries, answering this question can have important implications for the future of small island developing states like The Bahamas.</p>
 <h1 id="data-collection-and-tidying">Data Collection and Tidying</h1>
-<p><strong>Describe your data</strong> <em>Where did you access it? What are its spatial and temporal features? What are its limitations? What do you know about the sampling strategy and what biases that may introduce? If helpful, you can use a histogram, scatterplot, or summary statistics table to describe your data</em></p>
 <p>For the analysis of this research question, data from the National Hurricane Center and The World Bank are being used.</p>
 <h2 id="gdp-growth-data">GDP Growth Data</h2>
 <p>The data for annual percentage of GDP Growth was collected from The World Bank Data Repository (World Bank, 2021). This data covers annual percentage of GDP growth from 1961 to present for The Bahamas. The metadata containing information about calculations and sampling strategy can be found <a href="https://databank.worldbank.org/reports.aspx?source=2&amp;type=metadata&amp;series=NY.GDP.MKTP.KD.ZG">here</a>.</p>
@@ -2550,13 +2548,13 @@ Show code
 </summary>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>gdp_growth</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"_posts"</span>, <span class='st'>"2021-11-24-hurricanes-and-gdp-growth-in-the-bahamas"</span>, <span class='st'>"final_proj_data"</span>, <span class='st'>"bah_yearly_gdp_growth.csv"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span><span class='st'>"country_name"</span> <span class='op'>=</span> <span class='st'>"Country Name"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>country_name</span> <span class='op'>==</span> <span class='st'>"Bahamas, The"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>-</span><span class='st'>"Indicator Name"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>rename</span><span class='op'>(</span><span class='st'>"country_name"</span> <span class='op'>=</span> <span class='st'>"Country Name"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>country_name</span> <span class='op'>==</span> <span class='st'>"Bahamas, The"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>select</span><span class='op'>(</span><span class='op'>-</span><span class='st'>"Indicator Name"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
   <span class='fu'>pivot_longer</span><span class='op'>(</span>cols <span class='op'>=</span> <span class='fl'>2</span><span class='op'>:</span><span class='fl'>62</span>, 
                names_to <span class='op'>=</span> <span class='st'>"year"</span>, 
                values_to <span class='op'>=</span> <span class='st'>"gdp_growth"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>year</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='fu'>mutate</span><span class='op'>(</span>year <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>year</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </details>
@@ -2594,611 +2592,12 @@ Show code
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>storms</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"_posts"</span>, <span class='st'>"2021-11-24-hurricanes-and-gdp-growth-in-the-bahamas"</span>, <span class='st'>"final_proj_data"</span>, <span class='st'>"bahamas_hurricanes.csv"</span><span class='op'>)</span><span class='op'>)</span> 
 
 <span class='va'>yr_storms</span> <span class='op'>&lt;-</span> <span class='va'>storms</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>year</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>year</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
   <span class='fu'>summarize</span><span class='op'>(</span>number <span class='op'>=</span> <span class='fu'>n</span><span class='op'>(</span><span class='op'>)</span>, 
             avg_strength <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>category</span><span class='op'>)</span>,
             avg_numisland <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>no_of_islands</span><span class='op'>)</span><span class='op'>)</span>
 
-<span class='va'>yr_storms_summary</span> <span class='op'>&lt;-</span> <span class='va'>yr_storms</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span>
-    digits <span class='op'>=</span> <span class='fl'>2</span>,
-    col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Year"</span>, <span class='st'>"Number of Storms"</span>, <span class='st'>"Average Strength"</span>, <span class='st'>"Average Number of Islands"</span><span class='op'>)</span>, 
-    align <span class='op'>=</span> <span class='st'>'lccr'</span>,
-    caption <span class='op'>=</span> <span class='st'>"Bahamian Hurricane Summary Statistics 1960 - 2021"</span><span class='op'>)</span>
-
-<span class='va'>yr_storms_summary</span>
-</code></pre>
-</div>
-</details>
-<table>
-<caption>
-<span id="tab:unnamed-chunk-3">Table 1: </span>Bahamian Hurricane Summary Statistics 1960 - 2021
-</caption>
-<thead>
-<tr>
-<th style="text-align:left;">
-Year
-</th>
-<th style="text-align:center;">
-Number of Storms
-</th>
-<th style="text-align:center;">
-Average Strength
-</th>
-<th style="text-align:right;">
-Average Number of Islands
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-1960
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-4.00
-</td>
-<td style="text-align:right;">
-3.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-1961
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-1.00
-</td>
-<td style="text-align:right;">
-4.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-1963
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-3.00
-</td>
-<td style="text-align:right;">
-3.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-1965
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-5.00
-</td>
-<td style="text-align:right;">
-2.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-1966
-</td>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;">
-3.50
-</td>
-<td style="text-align:right;">
-3.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-1970
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-1.00
-</td>
-<td style="text-align:right;">
-1.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-1972
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-1.00
-</td>
-<td style="text-align:right;">
-1.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-1973
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-1.00
-</td>
-<td style="text-align:right;">
-3.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-1979
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-3.00
-</td>
-<td style="text-align:right;">
-1.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-1981
-</td>
-<td style="text-align:center;">
-3
-</td>
-<td style="text-align:center;">
-1.67
-</td>
-<td style="text-align:right;">
-2.67
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-1984
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-1.00
-</td>
-<td style="text-align:right;">
-2.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-1985
-</td>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;">
-2.00
-</td>
-<td style="text-align:right;">
-2.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-1987
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-1.00
-</td>
-<td style="text-align:right;">
-3.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-1988
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-1.00
-</td>
-<td style="text-align:right;">
-2.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-1991
-</td>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;">
-1.00
-</td>
-<td style="text-align:right;">
-2.50
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-1992
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-6.00
-</td>
-<td style="text-align:right;">
-6.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-1995
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-3.00
-</td>
-<td style="text-align:right;">
-4.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-1996
-</td>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;">
-3.50
-</td>
-<td style="text-align:right;">
-1.50
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-1998
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-5.00
-</td>
-<td style="text-align:right;">
-1.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-1999
-</td>
-<td style="text-align:center;">
-4
-</td>
-<td style="text-align:center;">
-2.75
-</td>
-<td style="text-align:right;">
-2.75
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2001
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-5.00
-</td>
-<td style="text-align:right;">
-2.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2002
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-1.00
-</td>
-<td style="text-align:right;">
-2.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2003
-</td>
-<td style="text-align:center;">
-4
-</td>
-<td style="text-align:center;">
-2.50
-</td>
-<td style="text-align:right;">
-1.75
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2004
-</td>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;">
-4.00
-</td>
-<td style="text-align:right;">
-10.50
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2005
-</td>
-<td style="text-align:center;">
-6
-</td>
-<td style="text-align:center;">
-1.83
-</td>
-<td style="text-align:right;">
-2.83
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2006
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-1.00
-</td>
-<td style="text-align:right;">
-2.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2007
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-2.00
-</td>
-<td style="text-align:right;">
-5.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2008
-</td>
-<td style="text-align:center;">
-3
-</td>
-<td style="text-align:center;">
-3.67
-</td>
-<td style="text-align:right;">
-1.67
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2010
-</td>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;">
-1.00
-</td>
-<td style="text-align:right;">
-3.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2011
-</td>
-<td style="text-align:center;">
-3
-</td>
-<td style="text-align:center;">
-2.00
-</td>
-<td style="text-align:right;">
-4.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2012
-</td>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;">
-3.00
-</td>
-<td style="text-align:right;">
-3.50
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2013
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-1.00
-</td>
-<td style="text-align:right;">
-2.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2014
-</td>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;">
-1.50
-</td>
-<td style="text-align:right;">
-2.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2015
-</td>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;">
-3.50
-</td>
-<td style="text-align:right;">
-4.50
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2016
-</td>
-<td style="text-align:center;">
-3
-</td>
-<td style="text-align:center;">
-2.67
-</td>
-<td style="text-align:right;">
-2.67
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2017
-</td>
-<td style="text-align:center;">
-3
-</td>
-<td style="text-align:center;">
-4.00
-</td>
-<td style="text-align:right;">
-3.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2018
-</td>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;">
-1.50
-</td>
-<td style="text-align:right;">
-2.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2019
-</td>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;">
-5.00
-</td>
-<td style="text-align:right;">
-2.50
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2020
-</td>
-<td style="text-align:center;">
-4
-</td>
-<td style="text-align:center;">
-1.50
-</td>
-<td style="text-align:right;">
-1.50
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2021
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-2.00
-</td>
-<td style="text-align:right;">
-1.00
-</td>
-</tr>
-</tbody>
-</table>
-<details>
-<summary>
-Show code
-</summary>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>yearly</span> <span class='op'>&lt;-</span> <span class='fu'>ggplot</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>yr_storms</span>, <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>year</span>, y <span class='op'>=</span> <span class='va'>number</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+<span class='va'>yearly</span> <span class='op'>&lt;-</span> <span class='fu'>ggplot</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>yr_storms</span>, <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>year</span>, y <span class='op'>=</span> <span class='va'>number</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'>geom_point</span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"blue"</span><span class='op'>)</span> <span class='op'>+</span> 
   <span class='fu'>labs</span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Year"</span>, 
        y <span class='op'>=</span> <span class='st'>"Number of Storms"</span>, 
@@ -3230,22 +2629,20 @@ Show code
 </summary>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>hgdp</span> <span class='op'>&lt;-</span> <span class='fu'>full_join</span><span class='op'>(</span><span class='va'>gdp_growth</span>, <span class='va'>yr_storms</span>, by <span class='op'>=</span> <span class='st'>'year'</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>storm <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>number</span><span class='op'>)</span> <span class='op'>~</span> <span class='st'>"no"</span>, 
+  <span class='fu'>mutate</span><span class='op'>(</span>storm <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>number</span><span class='op'>)</span> <span class='op'>~</span> <span class='st'>"no"</span>, 
                            <span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>number</span><span class='op'>)</span> <span class='op'>~</span> <span class='st'>"yes"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>gdp_growth</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>gdp_growth</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </details>
 </div>
 <h1 id="analysis">Analysis</h1>
 <h2 id="plan">Plan</h2>
-<p><strong>Clearly describe your analysis plan</strong> <em>What is your analysis plan? Why did you choose this analysis, given your data and question? What are the limitations?</em></p>
 <p>For this analysis I’m going to first look at a linear regression of the impact of yearly number hurricanes and their average strength on annual percentage of GDP growth. I will then perform hypothesis testing to evaluate if there is a difference in GDP growth between years with hurricanes versus years without.</p>
 <p>I decided to use multiple linear regression to evaluate the relation between hurricanes and annual percentage of GDP growth because I wanted to avoid one omitted variable that can lead to bias. The stronger a hurricane, the more damage it inflicts on a location so I did not just want to look at the number of hurricanes in a given year but also how strong they are.</p>
 <p>Hypothesis testing will be used to evaluate whether there was a difference in years with and without hurricanes. Further, I will investigate if there is a lag effect of hurricanes on annual percentage of GDP growth in The Bahamas by comparing the p-value for a year with a hurricane and then at years where there was a hurricane two years prior.</p>
 <p>The biggest limitation in answering my research question is the known fact that more than the impact of hurricanes affect the annual GDP growth of The Bahamas so there is a likely chance that my results will be inconclusive because of omitted variables in GDP growth.</p>
 <h2 id="results">Results</h2>
-<p><strong>Summarize your results visually and in words</strong> <em>Show us your results in figure(s) and/or table(s) that are carefully labeled and captioned. Describe in the text what you found, and how these results either do or do not help you answer your question.</em></p>
 <h3 id="linear-regression-summary">Linear Regression Summary</h3>
 <div class="layout-chunk" data-layout="l-body">
 <details>
@@ -3265,7 +2662,7 @@ Show code
 </details>
 <table>
 <caption>
-<span id="tab:unnamed-chunk-5">Table 2: </span>Multiple Linear Regression of Number of Hurricanes and their Average Strength on Annual GDP Growth
+<span id="tab:unnamed-chunk-5">Table 1: </span>Multiple Linear Regression of Number of Hurricanes and their Average Strength on Annual GDP Growth
 </caption>
 <thead>
 <tr>
@@ -3399,11 +2796,11 @@ Show code
 </summary>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>mu_nostorms</span> <span class='op'>&lt;-</span> <span class='va'>hgdp</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm</span> <span class='op'>==</span> <span class='st'>"no"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm</span> <span class='op'>==</span> <span class='st'>"no"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
   <span class='fu'>summarize</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>gdp_growth</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='va'>mu_storms</span> <span class='op'>&lt;-</span> <span class='va'>hgdp</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm</span> <span class='op'>==</span> <span class='st'>"yes"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm</span> <span class='op'>==</span> <span class='st'>"yes"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
   <span class='fu'>summarize</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>gdp_growth</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='va'>point_est</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>mu_nostorms</span> <span class='op'>-</span> <span class='va'>mu_storms</span><span class='op'>)</span>
@@ -3418,10 +2815,10 @@ Show code
 Show code
 </summary>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>n1</span> <span class='op'>=</span> <span class='va'>hgdp</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm</span> <span class='op'>==</span> <span class='st'>"no"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>count</span><span class='op'>(</span><span class='op'>)</span>
-<span class='va'>n2</span> <span class='op'>=</span> <span class='va'>hgdp</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm</span> <span class='op'>==</span> <span class='st'>"yes"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>count</span><span class='op'>(</span><span class='op'>)</span>
-<span class='va'>s1</span> <span class='op'>=</span> <span class='va'>hgdp</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm</span> <span class='op'>==</span> <span class='st'>"no"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>summarize</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>gdp_growth</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
-<span class='va'>s2</span> <span class='op'>=</span> <span class='va'>hgdp</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm</span> <span class='op'>==</span> <span class='st'>"yes"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>summarize</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>gdp_growth</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>n1</span> <span class='op'>=</span> <span class='va'>hgdp</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm</span> <span class='op'>==</span> <span class='st'>"no"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>count</span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>n2</span> <span class='op'>=</span> <span class='va'>hgdp</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm</span> <span class='op'>==</span> <span class='st'>"yes"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>count</span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>s1</span> <span class='op'>=</span> <span class='va'>hgdp</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm</span> <span class='op'>==</span> <span class='st'>"no"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>summarize</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>gdp_growth</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>s2</span> <span class='op'>=</span> <span class='va'>hgdp</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm</span> <span class='op'>==</span> <span class='st'>"yes"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>summarize</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>gdp_growth</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
 <span class='va'>SE</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='op'>(</span><span class='va'>s1</span><span class='op'>^</span><span class='fl'>2</span><span class='op'>/</span><span class='va'>n1</span> <span class='op'>+</span> <span class='va'>s2</span><span class='op'>^</span><span class='fl'>2</span><span class='op'>/</span><span class='va'>n2</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='va'>zscore</span> <span class='op'>=</span> <span class='op'>(</span><span class='va'>point_est</span> <span class='op'>-</span> <span class='fl'>0</span><span class='op'>)</span><span class='op'>/</span><span class='va'>SE</span>
@@ -3442,7 +2839,7 @@ Show code
 </summary>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>hgdp_lag</span> <span class='op'>&lt;-</span> <span class='va'>hgdp</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>storm_lag <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/lag.html'>lag</a></span><span class='op'>(</span><span class='va'>storm</span>, n <span class='op'>=</span> <span class='fl'>2</span>, default <span class='op'>=</span> <span class='cn'>NA</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='fu'>mutate</span><span class='op'>(</span>storm_lag <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/lag.html'>lag</a></span><span class='op'>(</span><span class='va'>storm</span>, n <span class='op'>=</span> <span class='fl'>2</span>, default <span class='op'>=</span> <span class='cn'>NA</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </details>
@@ -3455,11 +2852,11 @@ Show code
 </summary>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>mu_nostorms</span> <span class='op'>&lt;-</span> <span class='va'>hgdp_lag</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm_lag</span> <span class='op'>==</span> <span class='st'>"no"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm_lag</span> <span class='op'>==</span> <span class='st'>"no"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
   <span class='fu'>summarize</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>gdp_growth</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='va'>mu_storms</span> <span class='op'>&lt;-</span> <span class='va'>hgdp_lag</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm_lag</span> <span class='op'>==</span> <span class='st'>"yes"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm_lag</span> <span class='op'>==</span> <span class='st'>"yes"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
   <span class='fu'>summarize</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>gdp_growth</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='va'>point_est</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>mu_nostorms</span> <span class='op'>-</span> <span class='va'>mu_storms</span><span class='op'>)</span>
@@ -3474,10 +2871,10 @@ Show code
 Show code
 </summary>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>n1</span> <span class='op'>=</span> <span class='va'>hgdp_lag</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm_lag</span> <span class='op'>==</span> <span class='st'>"no"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>count</span><span class='op'>(</span><span class='op'>)</span>
-<span class='va'>n2</span> <span class='op'>=</span> <span class='va'>hgdp_lag</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm_lag</span> <span class='op'>==</span> <span class='st'>"yes"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>count</span><span class='op'>(</span><span class='op'>)</span>
-<span class='va'>s1</span> <span class='op'>=</span> <span class='va'>hgdp_lag</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm_lag</span> <span class='op'>==</span> <span class='st'>"no"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>summarize</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>gdp_growth</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
-<span class='va'>s2</span> <span class='op'>=</span> <span class='va'>hgdp_lag</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm_lag</span> <span class='op'>==</span> <span class='st'>"yes"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>summarize</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>gdp_growth</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>n1</span> <span class='op'>=</span> <span class='va'>hgdp_lag</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm_lag</span> <span class='op'>==</span> <span class='st'>"no"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>count</span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>n2</span> <span class='op'>=</span> <span class='va'>hgdp_lag</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm_lag</span> <span class='op'>==</span> <span class='st'>"yes"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>count</span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>s1</span> <span class='op'>=</span> <span class='va'>hgdp_lag</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm_lag</span> <span class='op'>==</span> <span class='st'>"no"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>summarize</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>gdp_growth</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>s2</span> <span class='op'>=</span> <span class='va'>hgdp_lag</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>storm_lag</span> <span class='op'>==</span> <span class='st'>"yes"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>summarize</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>gdp_growth</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
 <span class='va'>SE</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='op'>(</span><span class='va'>s1</span><span class='op'>^</span><span class='fl'>2</span><span class='op'>/</span><span class='va'>n1</span> <span class='op'>+</span> <span class='va'>s2</span><span class='op'>^</span><span class='fl'>2</span><span class='op'>/</span><span class='va'>n2</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='va'>zscore</span> <span class='op'>=</span> <span class='op'>(</span><span class='va'>point_est</span> <span class='op'>-</span> <span class='fl'>0</span><span class='op'>)</span><span class='op'>/</span><span class='va'>SE</span>
@@ -3487,8 +2884,8 @@ Show code
 </div>
 </details>
 </div>
-<p>With the new p-value with the lagged effect being 0.0019 &lt; 0.05, we can now reject the null that there is no difference in GDP growth for years with there was a storm 2 years prior versus years there was not. We can now say there is a statistical difference at the 95% confidence level in annual GDP growth percentage between years where the was a hurricane two years prior versus those with none.</p>
-<p>Because we were able to reject the null hypothesis here, I will now contruct a confidence interval for the p-value.</p>
+<p>With the new p-value with the lagged effect being 0.0019 &lt; 0.05, we can now reject the null that there is no difference in GDP growth for years with there was a storm 2 years prior versus years there was not. We can now say there is a statistical difference at the 95% confidence level in annual GDP growth percentage between years where there was a hurricane two years prior versus those with none.</p>
+<p>Because we were able to reject the null hypothesis here, I constructed a confidence interval for the p-value.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -3505,10 +2902,9 @@ Show code
 </div>
 <p>There is a 95% probability that [2.13, 9.41] contained the difference in annual GDP growth for years where there was a hurricane two years prior versus years where there was not.</p>
 <h1 id="next-steps">Next Steps</h1>
-<p><strong>What might you do next?</strong> <em>One short analysis cannot fully answer an interesting scientific question. If you had time to collect more data or conduct more analysis, what would help you answer this question better?</em></p>
 <p>If I had more time to conduct further analysis, I would look at other contributing factors to GDP growth in The Bahamas and try to identify some of the possible omitted variable bias. Additionally, I would look at the link between population impacted and the annual percentage of GDP growth. Because The Bahamas is an archipelago of 17 major inhabited islands, often times hurricanes will only impact a selection of them depending on its path. Larger islands have more infrastructure and thus the damages can be more costly. Looking at the number of islands and the population impacted by a hurricanes might lead to a more definitive answer about the impact of hurricanes on the annual percentage of GDP growth.</p>
 <p>In this further analysis, I can also look at the cost of damages of each storm and compare that to the annual percentage of GDP growth. This would be another good metric for determining the impact of storms.</p>
-<p>Finally, I would examine how to separate the impact of Covid-19 on annual percentage of GDP growth. I considered removing 2020 from the datasets because there was a very large decrease in percentage GDP growth and that was the Covid-19 year. However in 2019, The Bahamas was hit with the worst hurricane on record. Dorian destroyed two islands and, according to the Inter American Development Bank, resulted in 3.4 billion dollars in damages, over 25% of The Bahamas’ GDP (Inter American Development Bank, 2019). As shown in my second hypothesis test, there is an lag effect in the impact on GDP. Removing the years following the impact of Hurricane Dorian would cause inaccuracies in the study. For further analysis, I would look at</p>
+<p>Finally, I would examine how to separate the impact of Covid-19 on annual percentage of GDP growth. I considered removing 2020 from the datasets because there was a very large decrease in percentage GDP growth and that was the Covid-19 year. However in 2019, The Bahamas was hit with the worst hurricane on record. Dorian destroyed two islands and, according to the Inter American Development Bank, resulted in 3.4 billion dollars in damages, over 25% of The Bahamas’ GDP (Inter American Development Bank, 2019). As shown in my second hypothesis test, there is an lag effect in the impact on GDP. Removing the years following the impact of Hurricane Dorian would cause inaccuracies in the study.</p>
 <h1 id="references">References</h1>
 <p>Inter American Development Bank. (2019, November 15). Damages and other impacts on Bahamas by Hurricane Dorian estimated at $3.4 billion: Report | IADB. <a href="https://www.iadb.org/en/news/damages-and-other-impacts-bahamas-hurricane-dorian-estimated-34-billion-report" class="uri">https://www.iadb.org/en/news/damages-and-other-impacts-bahamas-hurricane-dorian-estimated-34-billion-report</a></p>
 <p>National Hurricane Center. (2021a). NHC Data Archive. <a href="https://www.nhc.noaa.gov/data/" class="uri">https://www.nhc.noaa.gov/data/</a></p>

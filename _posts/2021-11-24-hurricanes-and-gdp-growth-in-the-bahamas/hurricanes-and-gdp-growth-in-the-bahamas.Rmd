@@ -19,7 +19,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, warning = F, message = F)
 
 library(tidyverse)
 library(here)
@@ -33,28 +33,19 @@ library(readr)
 library(modelr)
 library(knitr)
 library(openintro)
-library(plotly)
 ```
 
 # Research Question
 
-**Motivate your question** *Why is this important? Is there existing evidence on this question? If so, why is it inconclusive? If not, why not?*
-
-The aim of this project is to investigate the impact of hurricanes on the annual percentage of GDP growth in The Bahamas. Growing up in The Bahamas, I have witnessed first hand the devastating impacts of hurricanes on livelihoods throughout the country and have been an active participant in recovery efforts every time my island was struck. Natural disasters have massive economic and human costs and take a deep toll on growth prospects because reconstruction costs monopolize already scarce resources for health, education, and social spending, especially in developing countries (Ötker & Srinivasan, 2018).
-
+The aim of this project is to investigate the impact of hurricanes on the annual percentage of GDP growth in The Bahamas. Growing up in The Bahamas, I have witnessed first hand the devastating impacts of hurricanes on livelihoods throughout the country and have been an active participant in recovery efforts every time my island was struck. 
+Natural disasters have massive economic costs and take a deep toll on growth prospects because reconstruction costs monopolize already scarce resources for health, education, and social spending, especially in developing countries (Ötker & Srinivasan, 2018).
 There is existing research on the impact of hurricanes on GDP growth in the United States but this project will look specifically at The Bahamas. With the global changing climate and the continual impact of stronger hurricanes on Caribbean countries, answering this question can have important implications for the future of small island developing states like The Bahamas.
 
 # Data Collection and Tidying
 
-**Describe your data** *Where did you access it? What are its spatial and temporal features? What are its limitations? What do you know about the sampling strategy and what biases that may introduce? If helpful, you can use a histogram, scatterplot, or summary statistics table to describe your data*
-
-For the analysis of this research question, data from the National Hurricane Center and The World Bank are being used.
-
 ## GDP Growth Data
 
 The data for annual percentage of GDP Growth was collected from The World Bank Data Repository (World Bank, 2021). This data covers annual percentage of GDP growth from 1961 to present for The Bahamas. The metadata containing information about calculations and sampling strategy can be found [here](https://databank.worldbank.org/reports.aspx?source=2&type=metadata&series=NY.GDP.MKTP.KD.ZG).
-
-### Data I/O and Tidying
 
 ```{r}
 gdp_growth <- read_csv(here("_posts", "2021-11-24-hurricanes-and-gdp-growth-in-the-bahamas", "final_proj_data", "bah_yearly_gdp_growth.csv")) %>% 
@@ -67,9 +58,7 @@ gdp_growth <- read_csv(here("_posts", "2021-11-24-hurricanes-and-gdp-growth-in-t
   mutate(year = as.numeric(year))
 ```
 
-### Data Visualization
-
-```{r}
+```{r, fig.width=5, fig.height=2}
 ggplot(data = gdp_growth, aes(x = year, y = gdp_growth)) +
   geom_line(color = "lightblue") +
   geom_point(color = "blue") +
@@ -84,12 +73,10 @@ ggplot(data = gdp_growth, aes(x = year, y = gdp_growth)) +
 
 The data on hurricanes in The Bahamas was collected from the National Hurricane Center's Data Archive (National Hurricane Center, 2021a). This dataset did not exist in csv format, so I looked through the yearly reports from 1960 to present and recorded all of the storms that impacted The Bahamas. I made note of the year each storm occurred, the name of the storm, the intensity and the number of islands in The Bahamas that were impacted by each storm.
 
-In creation of this dataset, I recorded storm intensity from 1 to 6, with 1 being Tropical Storms and 6 being a category 5 hurricane. The Saffir-Simpson Wind Scale considers a tropical storm anything with winds below 74mph (National Hurricane Center, 2021b), but I know that these storms can still have damaging impacts on countries so I wanted to ensure they were included in the data to be analyzed for this question.
+In creation of this dataset, I recorded storm intensity from 1 to 6, with 1 being Tropical Storms and 6 being a category 5 hurricane. The Saffir-Simpson Wind Scale considers a tropical storm anything with winds below 74mph (National Hurricane Center, 2021b), but I know from personal experience that these storms can still have damaging impacts on countries so I wanted to ensure they were included in the data to be analyzed for this question.
 
-### Data I/O, Tidying and Visualization
-
-```{r}
-storms <- read_csv(here("_posts", "2021-11-24-hurricanes-and-gdp-growth-in-the-bahamas", "final_proj_data", "bahamas_hurricanes.csv")) 
+```{r, fig.width=6, fig.height=3}
+storms <- read_csv(here("final_proj_data", "bahamas_hurricanes.csv")) 
 
 yr_storms <- storms %>% 
   group_by(year) %>% 
@@ -97,34 +84,15 @@ yr_storms <- storms %>%
             avg_strength = mean(category),
             avg_numisland = mean(no_of_islands))
 
-yr_storms_summary <- yr_storms %>% 
-  kable(
-    digits = 2,
-    col.names = c("Year", "Number of Storms", "Average Strength", "Average Number of Islands"), 
-    align = 'lccr',
-    caption = "Bahamian Hurricane Summary Statistics 1960 - 2021")
-
-yr_storms_summary
-
 yearly <- ggplot(data = yr_storms, aes(x = year, y = number)) +
   geom_point(color = "blue") + 
   labs(x = "Year", 
-       y = "Number of Storms", 
+       y = "Number", 
        title = "Yearly Number of Storms to Impact the Bahamas") +
   theme_minimal() +
   theme(plot.title = element_text(hjust = 0.5))
 
-intensity <- ggplot(data = yr_storms, aes(x = year, y = avg_strength)) +
-  geom_point(color = "blue") +
-  labs(x = "Year", 
-       y = "Average Intensity of Storms", 
-       title = "Average Yearly Storm Intensity") +
-  theme_minimal() +
-  theme(plot.title = element_text(hjust = 0.5))
-
-
-yearly / intensity
-
+yearly
 ```
 
 # Combining the Datasets
@@ -142,9 +110,7 @@ hgdp <- full_join(gdp_growth, yr_storms, by = 'year') %>%
 
 ## Plan
 
-**Clearly describe your analysis plan** *What is your analysis plan? Why did you choose this analysis, given your data and question? What are the limitations?*
-
-For this analysis I'm going to first look at a linear regression of the impact of yearly number hurricanes and their average strength on annual percentage of GDP growth. I will then perform hypothesis testing to evaluate if there is a difference in GDP growth between years with hurricanes versus years without.
+For this analysis I going to first look at a linear regression of the impact of yearly number hurricanes and their average strength on annual percentage of GDP growth. I will then perform hypothesis testing to evaluate if there is a difference in GDP growth between years with hurricanes versus years without.
 
 I decided to use multiple linear regression to evaluate the relation between hurricanes and annual percentage of GDP growth because I wanted to avoid one omitted variable that can lead to bias. The stronger a hurricane, the more damage it inflicts on a location so I did not just want to look at the number of hurricanes in a given year but also how strong they are.
 
@@ -154,47 +120,35 @@ The biggest limitation in answering my research question is the known fact that 
 
 ## Results
 
-**Summarize your results visually and in words** *Show us your results in figure(s) and/or table(s) that are carefully labeled and captioned. Describe in the text what you found, and how these results either do or do not help you answer your question.*
-
 ### Linear Regression Summary
 
-```{r}
+```{r, fig.height=2, fig.width=2}
 gdp_num_strength <- lm(gdp_growth ~ number + avg_strength, data = hgdp) %>%
   summary() %>% 
   xtable() %>% 
   kable(digits = 3, 
-        caption = "Multiple Linear Regression of Number of Hurricanes and their Average Strength on Annual GDP Growth")
+        caption = "Multiple Linear Regression of Number of Hurricanes and their Average Strength on Annual GDP Growth") %>%
+  kable_styling(latex_options = "HOLD_position")
 
 gdp_num_strength
 
 mod <- lm(gdp_growth ~ number + avg_strength, data = hgdp)
 ```
 
-This linear regression tells us that the annual percentage of GDP growth in The Bahamas without the impact of Hurricanes is `r round(mod$coefficients[1], 2)`. With an increase in number of hurricanes per year by 1, ignoring their intensity, the annual percentage of GDP Growth decreases by `r round(mod$coefficients[2], 2)`. When observing the impact of average strength of hurricanes on GDP growth, with an increase in 1 category of hurricane intensity, ignoring the number of storms, the annual percentage of GDP growth increases by `r round(mod$coefficients[3], 2)`
+This linear regression tells us that the annual percentage of GDP growth in The Bahamas without the impact of Hurricanes is `r round(mod$coefficients[1], 2)`. With an increase in number of hurricanes per year by 1, ignoring their intensity, the annual percentage of GDP Growth decreases by `r round(mod$coefficients[2], 2)`. When observing the impact of average strength of hurricanes on GDP growth, with an increase in 1 category of hurricane intensity, ignoring the number of storms, the annual percentage of GDP growth increases by `r round(mod$coefficients[3], 2)`.
 
-```{r}
+```{r, fig.width=6, fig.height=3}
 hgdp %>% 
   ggplot(aes(y = gdp_growth, x = number)) +
   geom_point() +
   stat_smooth(method = "lm", se = FALSE) + 
   labs(x = "Average Number of Storms",
        y = "Annual % GDP Growth", 
-       title = "Yearly GDP Growth and Number of Hurricanes with Regression Line")
+       title = "Regression of Yearly GDP Growth and Number of Storms") + 
+  theme_minimal()
 ```
 
 A negative correlation between annual percentage of GDP Growth and annual mean number of storms is displayed in this graph.
-
-```{r}
-hgdp %>% 
-  ggplot(aes(y = gdp_growth, x = avg_strength)) +
-  geom_point() +
-  stat_smooth(method = "lm", se = FALSE) + 
-  labs(x = "Average Strength of Storms",
-       y = "Annual % GDP Growth", 
-       title = "Yearly GDP Growth and Strength of Hurricanes with Regression Line")
-```
-
-There is a slight positive correlation seen between annual percent GDP growth and the average strength of storms. This positive correlation highlights that there are likely many omitted variables in the data as well as the possibility of a lagged effect.
 
 ### Hypothesis Testing
 
@@ -271,9 +225,9 @@ zscore = (point_est - 0)/SE
 p_val = 2 * pnorm(point_est, mean = 0, sd = SE, lower.tail=FALSE)
 ```
 
-With the new p-value with the lagged effect being `r round(p_val, 4)` \< 0.05, we can now reject the null that there is no difference in GDP growth for years with there was a storm 2 years prior versus years there was not. We can now say there is a statistical difference at the 95% confidence level in annual GDP growth percentage between years where the was a hurricane two years prior versus those with none.
+With the new p-value with the lagged effect being `r round(p_val, 4)` \< 0.05, we can now reject the null that there is no difference in GDP growth for years with there was a storm 2 years prior versus years there was not. We can now say there is a statistical difference at the 95% confidence level in annual GDP growth percentage between years where there was a hurricane two years prior versus those with none.
 
-Because we were able to reject the null hypothesis here, I will now contruct a confidence interval for the p-value.
+Because we were able to reject the null hypothesis here, I constructed a confidence interval for the p-value.
 
 ```{r}
 crit_val = qnorm(0.025, lower.tail=FALSE)
@@ -287,13 +241,13 @@ There is a 95% probability that [`r ci_lower`, `r ci_upper`] contained the diffe
 
 # Next Steps
 
-**What might you do next?** *One short analysis cannot fully answer an interesting scientific question. If you had time to collect more data or conduct more analysis, what would help you answer this question better?*
-
 If I had more time to conduct further analysis, I would look at other contributing factors to GDP growth in The Bahamas and try to identify some of the possible omitted variable bias. Additionally, I would look at the link between population impacted and the annual percentage of GDP growth. Because The Bahamas is an archipelago of 17 major inhabited islands, often times hurricanes will only impact a selection of them depending on its path. Larger islands have more infrastructure and thus the damages can be more costly. Looking at the number of islands and the population impacted by a hurricanes might lead to a more definitive answer about the impact of hurricanes on the annual percentage of GDP growth.
 
 In this further analysis, I can also look at the cost of damages of each storm and compare that to the annual percentage of GDP growth. This would be another good metric for determining the impact of storms.
 
-Finally, I would examine how to separate the impact of Covid-19 on annual percentage of GDP growth. I considered removing 2020 from the datasets because there was a very large decrease in percentage GDP growth and that was the Covid-19 year. However in 2019, The Bahamas was hit with the worst hurricane on record. Dorian destroyed two islands and, according to the Inter American Development Bank, resulted in 3.4 billion dollars in damages, over 25% of The Bahamas' GDP (Inter American Development Bank, 2019). As shown in my second hypothesis test, there is an lag effect in the impact on GDP. Removing the years following the impact of Hurricane Dorian would cause inaccuracies in the study. For further analysis, I would look at
+Finally, I would examine how to separate the impact of Covid-19 on annual percentage of GDP growth. I considered removing 2020 from the datasets because there was a very large decrease in percentage GDP growth and that was the Covid-19 year. However in 2019, The Bahamas was hit with the worst hurricane on record. Dorian destroyed two islands and, according to the Inter American Development Bank, resulted in 3.4 billion dollars in damages, over 25% of The Bahamas' GDP (Inter American Development Bank, 2019). As shown in my second hypothesis test, there is a lag effect on the impact on GDP. Removing the years following the impact of Hurricane Dorian would cause inaccuracies in the study. 
+
+The link to the GitHub repository containing code used in this analysis can be found [here](https://github.com/palomacartwright/eds222-final-project) and the live blog post can be found [here](https://palomacartwright.github.io/posts/2021-11-24-hurricanes-and-gdp-growth-in-the-bahamas/).
 
 # References
 
