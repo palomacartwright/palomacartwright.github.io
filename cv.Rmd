@@ -12,6 +12,10 @@ library(tidyverse)
 ```
 
 
+<button class="resume-button">
+[Download Resume](PalomaCartwright_Resume.pdf)
+</button>
+<br>
 
 Tel: (805) 294-5880 \|
 [palomacartwright\@bren.ucsb.edu](mailto:palomacartwright@bren.ucsb.edu){.email}
@@ -134,6 +138,3 @@ Development with JavaScript Certified
 </p>
 
 
-<button class="resume-button">
-[Download Resume](PalomaCartwright_Resume.pdf)
-</button>
