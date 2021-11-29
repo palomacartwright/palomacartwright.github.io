@@ -248,6 +248,7 @@ In this further analysis, I can also look at the cost of damages of each storm a
 Finally, I would examine how to separate the impact of Covid-19 on annual percentage of GDP growth. I considered removing 2020 from the datasets because there was a very large decrease in percentage GDP growth and that was the Covid-19 year. However in 2019, The Bahamas was hit with the worst hurricane on record. Dorian destroyed two islands and, according to the Inter American Development Bank, resulted in 3.4 billion dollars in damages, over 25% of The Bahamas' GDP (Inter American Development Bank, 2019). As shown in my second hypothesis test, there is a lag effect on the impact on GDP. Removing the years following the impact of Hurricane Dorian would cause inaccuracies in the study.
 
 
+
 # References
 
 Inter American Development Bank. (2019, November 15). Damages and other impacts on Bahamas by Hurricane Dorian estimated at \$3.4 billion: Report \| IADB. <https://www.iadb.org/en/news/damages-and-other-impacts-bahamas-hurricane-dorian-estimated-34-billion-report>

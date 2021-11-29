@@ -1556,9 +1556,9 @@ Show code
 </div>
 </details>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
-<img src="hurricanes-and-gdp-growth-in-the-bahamas_files/figure-html5/unnamed-chunk-2-1.png" alt="Yearly Pecentage of GDP Growth for The Bahamas from 1960 to 2020 shows a slight downward trend with some years being very non-normal" width="480" />
+<img src="hurricanes-and-gdp-growth-in-the-bahamas_files/figure-html5/unnamed-chunk-2-1.png" alt="Yearly Pecentage of GDP Growth for The Bahamas from 1960 to 2020 shows a slight downward trend with some years not following the general trend in the form of a large spike in either the positive or negative direction." width="480" />
 <p class="caption">
-Figure 1: Yearly Pecentage of GDP Growth for The Bahamas from 1960 to 2020 shows a slight downward trend with some years being very non-normal
+Figure 1: Yearly Pecentage of GDP Growth for The Bahamas from 1960 to 2020 shows a slight downward trend with some years not following the general trend in the form of a large spike in either the positive or negative direction.
 </p>
 </div>
 </div>
@@ -1591,7 +1591,12 @@ Show code
 </code></pre>
 </div>
 </details>
-<p><img src="hurricanes-and-gdp-growth-in-the-bahamas_files/figure-html5/unnamed-chunk-3-1.png" width="576" /></p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<img src="hurricanes-and-gdp-growth-in-the-bahamas_files/figure-html5/unnamed-chunk-3-1.png" alt="The yearly number of storms to impact The Bahamas from 1960-2020 has fluctuated between 0 and 6 storms." width="576" />
+<p class="caption">
+Figure 2: The yearly number of storms to impact The Bahamas from 1960-2020 has fluctuated between 0 and 6 storms.
+</p>
+</div>
 </div>
 <h1 id="combining-the-datasets">Combining the Datasets</h1>
 <p>To complete my analysis, I had to combine the GDP growth dataset with the Hurricane dataset. I also added a column to the dataset that recorded whether there was a storm in a given year and removed any years where the value for <code>gdp_growth</code> was <code>NA</code>.</p>
@@ -1738,7 +1743,12 @@ Show code
 </code></pre>
 </div>
 </details>
-<p><img src="hurricanes-and-gdp-growth-in-the-bahamas_files/figure-html5/unnamed-chunk-6-1.png" width="576" /></p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<img src="hurricanes-and-gdp-growth-in-the-bahamas_files/figure-html5/unnamed-chunk-6-1.png" alt="Linear regression of yearly percentage of GDP Growth and the number of storms that impacted The Bahamas shows a negative correlation which is to be expected based on knowledge of impact of storms." width="576" />
+<p class="caption">
+Figure 3: Linear regression of yearly percentage of GDP Growth and the number of storms that impacted The Bahamas shows a negative correlation which is to be expected based on knowledge of impact of storms.
+</p>
+</div>
 </div>
 <p>A negative correlation between annual percentage of GDP Growth and annual mean number of storms is displayed in this graph.</p>
 <h3 id="hypothesis-testing">Hypothesis Testing</h3>
