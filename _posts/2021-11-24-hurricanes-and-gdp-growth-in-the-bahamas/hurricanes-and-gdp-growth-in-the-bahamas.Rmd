@@ -12,6 +12,8 @@ categories:
   - tidyverse
   - kable
 output:
+  pdf_document:
+    toc: true
   distill::distill_article:
     toc: true
     code_folding: true
