@@ -92,7 +92,8 @@ yearly <- ggplot(data = yr_storms, aes(x = year, y = number)) +
        y = "Number", 
        title = "Yearly Number of Storms to Impact the Bahamas") +
   theme_minimal() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5)) +
+  ylim(c(0,6))
 
 yearly
 ```
