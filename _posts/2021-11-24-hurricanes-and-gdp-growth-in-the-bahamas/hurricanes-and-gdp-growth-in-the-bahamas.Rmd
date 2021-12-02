@@ -21,7 +21,7 @@ categories:
 - tidyverse
 - kable
 description: |
-  EDS 222 Final Project: Exploring the statistical relationship between Hurricanes and the Annual Percentage of   GDP Growth in The Bahamas.
+  EDS 222 Final Project: Exploring the statistical relationship between Hurricanes and the Annual Percentage of GDP Growth in The Bahamas.
 ---
 
 ```{r setup, include=FALSE}
@@ -53,7 +53,7 @@ There is existing research on the impact of hurricanes on GDP growth in the Unit
 
 ## GDP Growth Data
 
-The data for annual percentage of GDP Growth was collected from The World Bank Data Repository (World Bank, 2021). This data covers annual percentage of GDP growth from 1961 to present for The Bahamas. The metadata containing information about calculations and sampling strategy can be found [here](https://databank.worldbank.org/reports.aspx?source=2&type=metadata&series=NY.GDP.MKTP.KD.ZG).
+The data for annual percentage of GDP Growth was collected from The World Bank Open Data Repository (World Bank, 2021). This data covers annual percentage of GDP growth from 1961 to present for The Bahamas. The metadata containing information about calculations and sampling strategy can be found [here](https://databank.worldbank.org/reports.aspx?source=2&type=metadata&series=NY.GDP.MKTP.KD.ZG).
 
 ```{r}
 gdp_growth <- read_csv(here("_posts", "2021-11-24-hurricanes-and-gdp-growth-in-the-bahamas", "final_proj_data", "bah_yearly_gdp_growth.csv")) %>% 
@@ -97,7 +97,7 @@ yr_storms <- storms %>%
   arrange(year)
 
 yearly <- ggplot(data = yr_storms, aes(x = year, y = number)) +
-  geom_point(color = "blue") + 
+  geom_col(fill = "lightblue") + 
   labs(x = "Year", 
        y = "Number", 
        title = "Yearly Number of Storms to Impact the Bahamas") +
@@ -105,6 +105,7 @@ yearly <- ggplot(data = yr_storms, aes(x = year, y = number)) +
   theme(plot.title = element_text(hjust = 0.5)) 
 
 yearly
+ggsave("yearly_storms.jpg", width = 6, height = 4)
 ```
 
 ```{r}
@@ -166,10 +167,11 @@ The second linear regression I tested was the impact of a one year and two year 
 $gdpgrowth_t = \beta_0 + \beta_1 numstorms_t + \beta_1 numstorms_{t-1} + \beta_1 numstorms_{t-2} + u_t$
 
 ```{r}
+
 gdp <- ts(hgdp$gdp_growth, start=1960)
 yr0<-ts(hgdp$num_yr0,start=1960)
 
-year_lag_mod <- dynlm(gdp ~ L(yr0, 0:2))
+year_lag_mod <- dynlm(gdp ~ L(yr0, 0) + L(yr0, 1) + L(yr0, 2))
 year_lag_mod %>%
   summary() %>% 
   xtable() %>% 
