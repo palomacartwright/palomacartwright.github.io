@@ -3,15 +3,15 @@ title: "Hurricanes and GDP Growth in The Bahamas"
 author: "Paloma Cartwright"
 date: "2021-12-2"
 output:
-  pdf_document:
-    fig_caption: yes
-  html_document:
-    toc: yes
-    df_print: paged
   distill::distill_article:
     toc: yes
     code_folding: yes
     self_contained: no
+  html_document:
+    toc: yes
+    df_print: paged
+  pdf_document:
+    fig_caption: yes
 header-includes:
   \usepackage{float}
   \floatplacement{figure}{H}
