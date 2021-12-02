@@ -1630,12 +1630,12 @@ Show code
 </div>
 <h1 id="analysis">Analysis</h1>
 <h2 id="plan">Plan</h2>
-<p>For this analysis I going to first look at a linear regression of the impact of yearly number hurricanes on annual percentage of GDP growth. I decided to use linear regression to first see if there was an immediate effect of hurricanes on percentage of GDP growth.</p>
+<p>For this analysis I am going to first look at a linear regression of the impact of yearly number of hurricanes on annual percentage of GDP growth. I decided to use linear regression to first see if there was an immediate effect of hurricanes on percentage of GDP growth.</p>
 <p>Because I have data on the yearly number of hurricanes, I have the capability of looking at the lagged effect by year. I am interested in this because the hurricane season is June 1st to November 30th, so the impact of a late season storm might not be seen immediately. Additionally, the rebuilding process after a storm is slow so it can take a while for the progress to be seen. This means I will look at the number of hurricanes in the current year, and with a one and two year lag to see if there is a statistically significant impact of these. I will also look at the potential of a lagged dependent variable. I will use an auto correlation function to determine if the model is biased or inefficient using the <code>dwtest()</code>.</p>
 <p>The biggest limitation in answering my research question is the known fact that more than the impact of hurricanes affect the annual GDP growth of The Bahamas so there is a likely chance that my results will be inconclusive and my OLS assumptions will be violated.</p>
 <h2 id="results">Results</h2>
 <h3 id="test-1">Test 1</h3>
-<p>The first linear regression model is <span class="math inline">\(gdpgrowth_i = \beta_0 + \beta_1 numstorms_i + u_i\)</span>. This tests the impact of number of storms on annual percentage of gdp growth.</p>
+<p>The first linear regression model is <span class="math inline">\(gdpgrowth_i = \beta_0 + \beta_1 numstorms_i + u_i\)</span>. This tests the impact of number of storms on annual percentage of GDP growth.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -1742,7 +1742,7 @@ Figure 3: Linear regression of yearly percentage of GDP Growth and the number of
 </div>
 </div>
 <h3 id="test-2">Test 2</h3>
-<p>The second linear regression I tested was the impact of a one year and two year lag in number of storms on the annual percentage of gdp growth.</p>
+<p>The second linear regression I tested was the impact of a one year and two year lag in number of storms on the annual percentage of GDP growth.</p>
 <p><span class="math inline">\(gdpgrowth_t = \beta_0 + \beta_1 numstorms_t + \beta_1 numstorms_{t-1} + \beta_1 numstorms_{t-2} + u_t\)</span></p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
@@ -1914,7 +1914,7 @@ Figure 4: Linear regression of yearly percentage of GDP Growth and the number of
 </div>
 </div>
 <h3 id="test-3">Test 3</h3>
-<p>The third regression I completed for my time series OLS analysis was observing the impact of a one and two year lag in number of storms combined with the impact of past percentage of gdp growth on current percentage of gdp growth.</p>
+<p>The third regression I completed for my time series OLS analysis was observing the impact of a one and two year lag in number of storms combined with the impact of past percentage of GDP growth on current percentage of GDP growth.</p>
 <p><span class="math display">\[gdpgrowth_t = \beta_0 + \beta_1 numstorms_t + \beta_1 gdpgrowth_{t-1} + \beta_1 numstorms_{t-1} + \beta_1 gdpgrowth_{t-2} + \beta_1 numstorms_{t-2} + u_t\]</span>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
