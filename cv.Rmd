@@ -11,130 +11,143 @@ knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 ```
 
-
 <button class="resume-button">
-[Download Resume](PalomaCartwright_Resume.pdf)
+
+[Download Resume](Cartwright_Paloma_CV.pdf)
+
 </button>
+
 <br>
 
 Tel: (805) 294-5880 \|
 [palomacartwright\@bren.ucsb.edu](mailto:palomacartwright@bren.ucsb.edu){.email}
 \| [Github](https://github.com/palomacartwright) \|
-[LinkedIn](https://www.linkedin.com/in/paloma-cartwright-257b85171/) \|
-Santa Barbara, CA 
+[LinkedIn](https://www.linkedin.com/in/paloma-cartwright-257b85171/)
 
 ### **EDUCATION**
-<p class="body">
-**Master of Environmental Data Science** (Expected June 2022)
 
-**Bren School of Environmental Science and Management, University of
+<p class="body">
+
+**Master of Environmental Data Science,** 4.0 GPA (Expected June 2022)
+
+**Bren School of Environmental Science & Management - University of
 California Santa Barbara**
 
-[Highlighted Coursework:]{.ul} Analytical Workflows and Scientific
-Reproducibility; Meta-Analysis and Systematic Reviews; Team Science,
-Collaborative Analysis and Project Management; Remote Sensing and
-Environmental Data; Statistics for Environmental Data Science; Spatial
-Analysis (all to be completed by 12/21)
+-   [Highlighted Coursework:]{.ul} Remote Sensing & Environmental Data; Statistics for Environmental Data Science; Spatial Analysis; Machine Learning; Data Visualization & Communication; Environmental Policy Evaluation; Modeling Environmental Systems; Ethics & Bias in Environmental Data Science (all completed by 6/22)
 
-[Leadership/Involvement:]{.ul} MEDS 2022 Class Co-Chair, Dean's Advisory
-Council Committee Member
+-   [Leadership/Involvement:]{.ul} MEDS 2022 Class Co-Chair; MEDS Dean's Advisory Council Representative; Member of Bren Environmental Justice Club; Member of UCSB Black Graduate Student Association
 
-**Bachelor of Arts in Computer Science** (June 2021)
+-   [Honors/Awards:]{.ul} Bren School Environmental Data Science Fellowship
+
+**Bachelor of Arts in Computer Science,** 3.31 GPA (June 2021)
 
 **McGill University**, Montreal, Quebec, Canada
 
-[Honors/Awards]{.ul}: Ministry of Higher Education, Quebec: Excellence
-Bursary for Computer Science 2021; James McGill Scholarship for Academic
-Excellence and Outstanding Leadership
+-   [Highlighted Coursework:]{.ul} Knowledge, Ethics & Environment; Society, Environment & Sustainability; Artificial Intelligence; Algorithms & Data Structures; Programming Languages & Paradigms; Probability; Calculus 1, 2 & 3; Linear Algebra 1 & 2; Computer & Software Systems
 
-[Leadership/Involvement]{.ul}: VP Events -- Caribbean Student Society
-(9/20 -- 4/21); Volunteer -- McGill Model United Nations & Secondary
-School United Nations Symposiums (09/18 -- 01/20)
+-   [Honors/Awards:]{.ul} Ministry of Higher Education, Quebec: Excellence Bursary for Computer Science 2021; James McGill Scholarship for Academic Excellence and Outstanding Leadership 2017; All Bahamas Merit Scholar and Student Ambassador for The Bahamas 2017
+
+-   [Leadership/Involvement:]{.ul} VP Events -- Caribbean Student Society (9/20--4/21); Peer Supporter McGill (9/19--4/20); McGill Model United Nations Symposium Volunteer (9/18--4/20)
+
+</p>
+
+### **MASTER'S CAPSTONE DATA SCIENCE PROJECT**
+
+<p class="body">
+
+**Renewable Energy Siting Predictors Observed from National Data for Wind and Solar** **(RESPOND Wind and Solar)** (1/22--6/22) 
+
+**Role:** Communication Manager \| **Client:** Grace Wu, UCSB Environmental Studies
+**Deliverables:** Prediction Maps, GitHub Repository, Final Presentation and Report, R Shiny App (Stretch Goal)
+
+-   Identifying the historic drivers of wind and solar power plant siting based on a pilot study on 11 western US states using logistic regression and random forest machine learning in R and Python
+
+-   Evaluating the relationship of renewable energy siting with transmission, socio-economic indicators and local climate and other policies to help policymakers better understand the drivers of siting
+
+-   Ensure the progress of the project is effectively communicated with the client and create public facing materials on the project as required by Bren, the client or other stakeholders
+
+-   Collaborating with 3 other team members to ensure the project hits all its targeted goals on schedule
 
 </p>
 
 ### **PROFESSIONAL EXPERIENCE**
+
 <p class="body">
+
 **Whale Safe Intern -- Benioff Ocean Initiative,** Santa Barbara,
 California (09/21 -- Present)
 
--   Analyze and visualize spatial ocean data, including vessel data and
-    whale data from
-    real-time acoustic monitoring instruments, visual sightings, and
-    dynamic
-    habitat models
+-   Analyze and visualize spatial ocean data, including vessel data and whale data from real-time acoustic monitoring instruments, visual sightings, and dynamic habitat models
 
--   Create public-facing communication and media materials about project
-    updates and accomplishments
+-   Create public-facing communication and media materials about project updates and accomplishments
 
--   Research and write briefings on marine issues to inform Benioff
-    Ocean Initiative
-    projects and partnerships
+-   Research and write briefings on marine issues to inform Benioff Ocean Initiative projects and partnerships
 
--   Google BigQuery database management using SQL and RStudio to create,
-    update, and run queries
+-   Google BigQuery database management using SQL and RStudio to create, update, and run queries
 
 **Information Technology Coordinator -- Long Island Boat Rentals**, Long
 Island, The Bahamas (06/17 -- Present)
 
--   Coordinator for all technological aspects of the business
+-   Created and launched the first website for the company using HTML, CSS, and JavaScript 
 
--   Maintains the company's website and google business pages as well as
-    social media accounts
+-   Designed and outlined marketing strategy for social media team and hired 2 team members for the role
+
+-   Review and update website monthly, working with the team to update as they see fit
+
 
 **Field Research Intern -- Bimini Biological Field Station Foundation**,
 Bimini, The Bahamas (6/19 -- 7/19)
 
--   Collect data for PhD student's projects, assist with long term study
-    data collection
+-   Collect data for PhD students’ projects specifically focusing on lemon sharks’ response to marine noise and Great Hammerhead shark migratory feeding patterns; results published in two papers
 
--   Aid in the daily running of the field station, including maintenance
-    and repairs to all tools used in the field
+-   Collaborated with 20 colleagues on collecting data for 9 shark and 3 stingray species in Bimini
 
-**Research Intern -- Family Island Sea Turtle Research**, Long Island,
-The Bahamas (06/14 --08/19)
+-   Completed field safety and boating safety courses as well as boat captaining course
 
--   Assisted with turtle tagging and data collection during summers with
-    all turtle species present
+-   Aid in the daily running of the field station, including maintenance and repairs to all tools used in the field
 
--   Monitor populations of green turtles infected with fibropapilloma
-    virus
 
-**Summer Intern -- Bahamas Marine Mammal Research Organization,** Abaco,
-The Bahamas (06/15)
+**Research Intern -- Family Island Sea Turtle Research**, Long Island, The Bahamas (06/14 --08/19)
 
--   Summer internship with the BMMRO studying populations of marine
-    mammals surrounding Abaco
+-   Assisted with turtle tagging and data collection during summers with all turtle species present
 
--   Specific focus on dolphins, whales, and manatees and accurate
-    documentation of populations in the area
-    
+-   Monitor populations of green turtles infected with fibropapilloma virus
+
 </p>
 
-#### ADDITIONAL EXPERIENCE
+### ADDITIONAL EXPERIENCE
+
 <p class="body">
 
-**Head Coach -- Mack Knowles Junior Sailing Club,** Long Island, The
-Bahamas (6/18 -- 8/19)
+**Member of Bahamas National Sailing Team,** The Bahamas, (8/10–Present)
 
-**Certified Instructor -- Bahamas National Sailing School,** New
-Providence, The Bahamas (6/14 -- 8/16)
+-   Represented The Bahamas internationally in 3 sailing classes and 5 events. Currently a member of the Bahamas Nacra 17 Racing Team with possible 2024 Olympic Campaign
 
-[Honors]{.ul}**:** National Youth Award: Excellence in Sailing, Member
-of The Bahamas National Sailing Team
+**Head Coach – Mack Knowles Junior Sailing Club,** Long Island, The Bahamas (6/18–8/19)  
 
-**Deputy Junior Minister of Tourism** -- **Ministry of Tourism
-Bahamas**, The Bahamas (9/16 -- 6/17)
+-   Organized the 1st Annual Summer Sailing Camp, leading a team of 10 instructors and over 70+ students. Head Coach for Long Island’s sailing team, representing the island on a national level at 5 events each year
+
+**Certified Instructor – Bahamas National Sailing School,** New Providence, The Bahamas (6/14–8/18)
+
+-   Lead Instructor for 6-week summer camp supervising 12 instructors and over 100 sailors. Completed First Aid and CPR course, lifeguard and water safety course & boat captain course for certification
+
+**Deputy Junior Minister of Tourism – Ministry of Tourism Bahamas,** The Bahamas (9/16–6/17)
+
+-   Collaborated with a team of 15 in The Bahamas Ministry of Tourism to bring innovative ideas for refactoring Tourism strategies in The Bahamas and make initiatives more sustainable
+
+</p>
 
 ### **SKILLS**
 
-**Technical:** Python; Java; R (RStudio); SQL (SQLite); CSS; HTML;
-JavaScript; Github (+ Github Pages); Microsoft Office Suite; Google
-Tools
+<p class="body">
 
-**Certifications:** IANTD (Scuba); Certified Sailing Instructor; Web
-Development with JavaScript Certified
+**Programming Languages and Environments:** Python (Jupyter & Spyder); Java (Eclipse & IntelliJ); R (RStudio); SQL; CSS; HTML; JavaScript; GitHub (+ GitHub Pages); Google Cloud Platform (BigQuery, Cloud Functions) 
+
+**Project Management:** Clockify; Dropbox; Slack; ZenHub; Zoom; Microsoft Office Suite (Excel, Work, PowerPoint, Teams); Google Suite (Docs, Sheets, Slides) 
+
+**Certifications:** IANTD (Scuba); Certified Sailing Instructor with Boating Certification; Web Development with JavaScript Certified 
+
+**Awards:** National Youth Award: Excellence in Sailing; Bahamas Olympic Committee President’s Cup Award; All Bahamas Merit Scholar 
+
 
 </p>
-
-
