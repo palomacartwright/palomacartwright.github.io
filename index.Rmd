@@ -15,11 +15,11 @@ editor_options:
 <br>
   
 <p class="intro">
-As a Bahamian "sailor gal," I grew up spending all of my free time sailing or on beach somewhere on my tiny island, Long Island. My childhood inspired my love for the ocean and has been a guiding force in my life.
+As a Bahamian "sailor gal," I grew up spending all of my free time sailing or on a beach somewhere on my tiny island, Long Island. My childhood inspired my love for the ocean and has been a guiding force in my life.
 </p>
 
 <p class="intro">
-My life and educational journey has led me to become a Master of Environmental Data Science student at the Bren School of Environmental Science and Management at UCSB.
+My life and educational journey has led me to become a Master of Environmental Data Science student at the Bren School of Environmental Science & Management at UCSB.
 </p>
 
 <ul class="link_buttons">
