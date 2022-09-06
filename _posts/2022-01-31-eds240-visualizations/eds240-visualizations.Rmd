@@ -1,0 +1,85 @@
+---
+title: "EDS 240: Homework Visualizations"
+author: "Paloma Cartwright"
+date: 2022-01-31
+output:
+  distill::distill_article:
+    toc: yes
+    code_folding: hide
+    self_contained: false
+  html_document:
+    toc: yes
+    df_print: paged
+  pdf_document:
+    fig_caption: yes
+categories:
+- tidyverse
+- dataviz
+description: |
+  Throughout the course of EDS 240 - Data Visualization, I will continue to update this blog post with complete visualizations.
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+librarian::shelf(here, janitor, lubridate, paletteer, tidyverse)
+
+```
+
+2022-01-31
+
+# Sea Ice Data Visualization 
+
+## Import Data 
+
+The data imported for use in this visualization was cleaned in Tableau Prep as part of a previous assignment. 
+
+```{r}
+sea_ice <- read_csv(
+  here("_posts", "2022-01-31-eds240-visualizations", "data", "sea-ice-data.csv")) %>% 
+  clean_names() %>% 
+  mutate(month = lubridate::month(date))
+```
+
+## Prep the data 
+
+For the purpose of this visualization, I want to group the data into monthly averages over the years. 
+
+```{r}
+sea_ice_year_avg <- sea_ice %>% 
+  group_by(year) %>% 
+  summarize(yearly_avg = mean(vol))
+
+sea_ice <- sea_ice %>%
+  mutate(month = lubridate::month(date))%>%
+  group_by(month, year) %>%
+  summarize(avg = mean(vol))
+
+```
+
+
+
+```{r}
+
+sea_ice_graph <- ggplot(data = sea_ice, aes(x = year, y = avg)) + 
+  geom_point(aes(color = month)) +
+  scale_color_paletteer_c("scico::berlin", labels = c("Jan", "Mar", "Jun", "Sep", "Dec")) +
+  labs(title = "Mean Monthly Sea Ice Volume from 1979 to Present",
+       x = "Year", 
+       y = "Average Volume", 
+       color = "Month") +
+  theme(
+    legend.position = c(1, 1),
+    legend.justification = c(1, 1),
+    legend.background = element_rect(fill = "white", colour = "black")
+  ) +
+  geom_line(data = sea_ice_year_avg, aes(x = year, y = yearly_avg))
+  
+
+sea_ice_graph
+```
+
+
+

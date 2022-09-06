@@ -19,7 +19,7 @@ As a Bahamian "sailor gal," I grew up spending all of my free time sailing or on
 </p>
 
 <p class="intro">
-My life and educational journey has led me to become a Master of Environmental Data Science student at the Bren School of Environmental Science & Management at UCSB.
+My life and educational journey has led me to pursue a Ph.D. in Ocean Sciences at the University of Miami's Rosenstiel School of Marine and Atmospheric Science. My research focus is on sea level rise on the Florida and Bahamian coastlines. 
 </p>
 
 <ul class="link_buttons">
