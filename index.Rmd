@@ -40,7 +40,7 @@ My life and educational journey has led me to pursue a Ph.D. in Ocean Sciences a
 
 <li>
 
-<a href="mailto:palomacartwright@bren.ucsb.edu"> <button class="button">Email
+<a href="mailto:palomacartwright@miami.edu"> <button class="button">Email
 </button> </a>
 
 </li>
